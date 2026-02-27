@@ -1,0 +1,69 @@
+body {
+        margin: 0;
+            font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+                background-color: #f4f1ea;
+                    text-align: center;
+                        padding: 40px;
+                            transition: background 0.5s ease;
+                            }
+
+                            /* Título principal */
+                            h1 {
+                                font-size: 3rem;
+                                    color: #3a3a3a;
+                                        margin-bottom: 10px;
+                                            letter-spacing: 2px;
+                                            }
+
+                                            /* Contenedor de la pregunta */
+                                            #pregunta-container {
+                                                background: #ffffff;
+                                                    padding: 35px;
+                                                        border-radius: 25px;
+                                                            max-width: 650px;
+                                                                margin: 30px auto;
+                                                                    box-shadow: 0 8px 0 #d8d2c4;
+                                                                        border: 3px solid #e5ded0;
+                                                                        }
+
+                                                                        /* Texto de la pregunta */
+                                                                        #pregunta {
+                                                                            font-size: 1.4rem;
+                                                                                color: #444;
+                                                                                    margin-bottom: 25px;
+                                                                                    }
+
+                                                                                    /* Botones estilo caricatura */
+                                                                                    button {
+                                                                                        display: block;
+                                                                                            margin: 12px auto;
+                                                                                                padding: 14px 28px;
+                                                                                                    font-size: 1.05rem;
+                                                                                                        border-radius: 18px;
+                                                                                                            border: none;
+                                                                                                                cursor: pointer;
+                                                                                                                    font-weight: bold;
+                                                                                                                        background-color: #ffd97d;
+                                                                                                                            color: #3a3a3a;
+                                                                                                                                box-shadow: 0 5px 0 #e6b95c;
+                                                                                                                                    transition: all 0.15s ease;
+                                                                                                                                    }
+
+                                                                                                                                    /* Efecto al presionar */
+                                                                                                                                    button:hover {
+                                                                                                                                        transform: translateY(-2px);
+                                                                                                                                        }
+
+                                                                                                                                        button:active {
+                                                                                                                                            transform: translateY(3px);
+                                                                                                                                                box-shadow: 0 2px 0 #e6b95c;
+                                                                                                                                                }
+
+                                                                                                                                                /* Resultado */
+                                                                                                                                                #resultado {
+                                                                                                                                                    margin-top: 25px;
+                                                                                                                                                        font-size: 1.3rem;
+                                                                                                                                                            font-weight: bold;
+                                                                                                                                                                color: #555;
+                                                                                                                                                                }
+}
