@@ -21,8 +21,7 @@
 </div>
 
 <script>
-const baseURL = "https://TUUSUARIO.github.io/trivia-universitaria/categoria.html?cat=";
-
+const baseURL = "https://azkeele.github.io/trivia-universitaria/categoria.html?cat=";
 const categorias = [
 "fama",
 "vinculos",
@@ -42,4 +41,5 @@ categorias.forEach(cat => {
 </script>
 
 </body>
+
 </html>
