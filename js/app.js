@@ -5,14 +5,11 @@ document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
 
 let preguntasDisponibles = [...basePreguntas[categoria]];
 let preguntaActual = null;
-let puntaje = 0;
 
 function obtenerPreguntaAleatoria() {
     if (preguntasDisponibles.length === 0) {
-        document.getElementById("pregunta").innerText = "Juego terminado";
+        document.getElementById("pregunta").innerText = "No hay más preguntas.";
         document.getElementById("opciones").innerHTML = "";
-        document.getElementById("resultado").innerText = "";
-        document.getElementById("puntaje").innerText = "Puntaje final: " + puntaje + "/10";
         return null;
     }
 
@@ -37,20 +34,18 @@ function mostrarPregunta() {
     });
 
     document.getElementById("resultado").innerText = "";
-    document.getElementById("puntaje").innerText = "Puntaje: " + puntaje;
 }
 
 function verificarRespuesta(indice) {
+    const botones = document.querySelectorAll("#opciones button");
+
+    botones.forEach(btn => btn.disabled = true);
+
     if (indice === preguntaActual.correcta) {
-        puntaje++;
         document.getElementById("resultado").innerText = "Correcto ✅";
     } else {
         document.getElementById("resultado").innerText = "Incorrecto ❌";
     }
-}
-
-function siguientePregunta() {
-    mostrarPregunta();
 }
 
 mostrarPregunta();
