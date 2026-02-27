@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>Trivia Universitaria</h1>
+<h1>Trivia Rawr</h1>
 <h2>Escanea una categoría</h2>
 
 <div class="categorias">
@@ -21,7 +21,7 @@
 </div>
 
 <script>
-const baseURL = "https://azkeele.github.io/trivia-universitaria/categoria.html?cat=";
+const baseURL = "https://azkeele.github.io/trivia-rawr/categoria.html?cat=";
 const categorias = [
 "fama",
 "vinculos",
@@ -43,3 +43,4 @@ categorias.forEach(cat => {
 </body>
 
 </html>
+
