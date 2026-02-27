@@ -1,71 +1,90 @@
 body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Verdana', sans-serif;
-    background-color: #f7e8d0; /* color base neutro */
+    background-color: #f7e8d0;
     text-align: center;
     padding: 40px;
     min-height: 100vh;
     transition: background 0.6s ease;
 }
+
 /* Título principal */
 h1 {
     font-size: 3rem;
     color: #3a3a3a;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    animation: aparecer 0.8s ease;
 }
 
-/* Contenedor de la pregunta */
+/* Contenedor tipo espuma teatral */
 #pregunta-container {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 35px;
-    max-width: 650px;
+    padding: 50px;
+    border-radius: 45px;
+    max-width: 680px;
     margin: 40px auto;
-    border: 4px solid #f0e6d6;
+    border: 5px solid #f0e6d6;
     box-shadow:
-        0 10px 0 #d8d2c4,
-        0 20px 30px rgba(0,0,0,0.1);
+        0 12px 0 #d8d2c4,
+        0 25px 40px rgba(0,0,0,0.15);
+    animation: aparecer 0.8s ease;
 }
 
 /* Texto de la pregunta */
 #pregunta {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #444;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-/* Botones estilo caricatura suave */
+/* Botones más suaves */
 button {
     display: block;
-    margin: 15px auto;
-    padding: 16px 30px;
-    font-size: 1.1rem;
-    border-radius: 25px;
-    border: 3px solid #e6b95c;
+    margin: 18px auto;
+    padding: 18px 35px;
+    font-size: 1.15rem;
+    border-radius: 40px;
+    border: none;
     cursor: pointer;
     font-weight: bold;
     background-color: #ffd97d;
     color: #3a3a3a;
-    box-shadow: 0 6px 0 #e6b95c;
+    box-shadow: 0 8px 0 #e6b95c;
     transition: all 0.15s ease;
 }
 
-/* Efecto hover */
 button:hover {
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
-/* Efecto al presionar */
 button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0 #e6b95c;
+    transform: scale(0.97);
+    box-shadow: 0 4px 0 #e6b95c;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 /* Resultado */
 #resultado {
-    margin-top: 25px;
-    font-size: 1.3rem;
+    margin-top: 30px;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #555;
+    animation: aparecer 0.5s ease;
+}
+
+/* Animación suave */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
