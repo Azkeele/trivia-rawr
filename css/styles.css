@@ -1,12 +1,12 @@
 body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Verdana', sans-serif;
-    background: linear-gradient(135deg, #f7e8d0, #e8f3e6);
+    background-color: #f7e8d0; /* color base neutro */
     text-align: center;
     padding: 40px;
     min-height: 100vh;
+    transition: background 0.6s ease;
 }
-
 /* Título principal */
 h1 {
     font-size: 3rem;
