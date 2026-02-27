@@ -2,7 +2,6 @@ const params = new URLSearchParams(window.location.search);
 const categoria = params.get("cat");
 
 document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
-document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
 
 /* 🎨 Colores por categoría */
 const coloresCategorias = {
@@ -11,7 +10,7 @@ const coloresCategorias = {
     resignacion: "linear-gradient(135deg, #b8c0ff, #e0c3fc)",
     felicidad: "linear-gradient(135deg, #caffbf, #9bf6ff)",
     meteorito: "linear-gradient(135deg, #bdb2ff, #a0c4ff)",
-    proyecto: "linear-gradient(135deg, #ffd6a5, #fdffb6)"
+    proyecto: "linear-gradient(135deg, #ecb1fa, #fff6b6)"
 };
 
 if (coloresCategorias[categoria]) {
