@@ -1,245 +1,158 @@
-
-
-/ Variables CSS para colores y valores comunes /
-:root {
-    --color-fondo-body: f0f0f0;
-    --color-texto-titulos: 333;
-    --color-decoracion-principal: e8d8b8; / Tono base para degradados decorativos /
-    --color-decoracion-sombra: d4c4a0;
-    --color-decoracion-borde: c9b38d;
-    --color-decoracion-base: b8a080;
-    --color-adorno-radial-inicio: f4d47f;
-    --color-adorno-radial-fin: d4a548;
-    --color-linea-gradiente-inicio: 8B6914; / Dorado oscuro /
-    --color-linea-gradiente-medio: C9A46A; / Dorado medio /
-    --color-sombra-elemento: rgba(0, 0, 0, 0.4);
-    --color-sombra-inset: rgba(0, 0, 0, 0.2);
-    --color-sombra-inset-claro: rgba(255, 255, 255, 0.3);
-    --color-sombra-texto: rgba(0, 0, 0, 0.2);
-    --color-textura-radial-1: rgba(139, 69, 19, 0.1); / Marrón semitransparente /
-    --color-textura-radial-2: rgba(0, 0, 0, 0.1); / Negro semitransparente /
-    --espaciado-base: 20px;
-    --espaciado-lateral-linea: 20px;
-    --altura-linea: 3px;
-    --ancho-esquina-decorativa: 8px;
-    --altura-esquina-decorativa: 160px;
-    --radio-adorno: 50%;
-    --radio-cartel-textura: 8px;
-    --duracion-balanceo: 6s;
-    --duracion-oscilacion: 3s;
-    --angulo-rotacion-balanceo-min: -1.2deg;
-    --angulo-rotacion-balanceo-max: -1.8deg;
-    --angulo-rotacion-oscilacion-min: -8deg;
-    --angulo-rotacion-oscilacion-max: 8deg;
-}
-
-/ Estilos generales del cuerpo /
+/* =======================
+   ESTILOS GENERALES
+======================= */
 body {
-    background-color: var(--color-fondo-body);
+    background: radial-gradient(circle at top, #fdf6e3 0%, #e6d2a5 100%);
     font-family: Arial, sans-serif;
-    margin: 0; / Buena práctica: resetear margen por defecto /
-    padding: 0;
+    margin: 0;
 }
 
-/ Estilos para encabezados /
 h1, h2, h3 {
-    color: var(--color-texto-titulos);
+    color: #333;
     text-align: center;
 }
 
-/ --- DECORACIONES TEATRALES MEJORADAS --- /
-
-/ Contenedor principal del cartel /
+/* =======================
+   CARTEL DECORATIVO
+======================= */
 .cartel-wrapper {
-    position: relative; / Necesario para posicionar elementos hijos absolutos /
-    / Añadir estilos base si son necesarios para el wrapper mismo /
+    position: relative;
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 60px 40px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
 }
 
-/ Esquinas decorativas del cartel (simulan un marco o soporte) /
+/* Esquinas decorativas */
 .cartel-wrapper::before,
 .cartel-wrapper::after {
     content: "";
     position: absolute;
-    width: var(--ancho-esquina-decorativa);
-    height: var(--altura-esquina-decorativa);
+    width: 8px;
+    height: 160px;
     background: repeating-linear-gradient(
         45deg,
-        var(--color-decoracion-principal) 0px,
-        var(--color-decoracion-principal) 3px,
-        var(--color-decoracion-sombra) 3px,
-        var(--color-decoracion-sombra) 4px,
-        var(--color-decoracion-borde) 4px,
-        var(--color-decoracion-borde) 7px,
-        var(--color-decoracion-base) 7px,
-        var(--color-decoracion-base) 8px
+        #e8d8b8 0px,
+        #e8d8b8 3px,
+        #d4c4a0 3px,
+        #d4c4a0 4px,
+        #c9b38d 4px,
+        #c9b38d 7px,
+        #b8a080 7px,
+        #b8a080 8px
     );
-    / Sombreado para dar profundidad y relieve /
-    box-shadow:
-        inset 1px 1px 2px var(--color-sombra-inset-claro), / Sombra interna superior/izquierda /
-        inset -1px -1px 2px var(--color-sombra-inset),    / Sombra interna inferior/derecha /
-        2px 2px 8px var(--color-sombra-elemento);         / Sombra externa /
-    top: calc(-1  var(--altura-esquina-decorativa)); / Posiciona la parte superior del decorado por encima del wrapper /
+    box-shadow: 
+        inset 1px 1px 2px rgba(255,255,255,0.3),
+        inset -1px -1px 2px rgba(0,0,0,0.2),
+        2px 2px 8px rgba(0,0,0,0.4);
+    top: -160px;
 }
 
 .cartel-wrapper::before {
     left: 25%;
-    / Transformación para dar un efecto de inclinación y perspectiva /
     transform: skewX(-3deg) rotate(-2deg);
 }
 
 .cartel-wrapper::after {
     right: 25%;
-    / Transformación opuesta para simetría /
     transform: skewX(3deg) rotate(2deg);
 }
 
-/ Adornos en las esquinas del cartón (elementos circulares decorativos) /
+/* Adornos de esquinas */
 .pregunta-container-ornament {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: radial-gradient(circle at 30% 30%, var(--color-adorno-radial-inicio), var(--color-adorno-radial-fin));
-    border-radius: var(--radio-adorno); / Círculo perfecto /
-    / Sombreado para dar volumen /
-    box-shadow:
-        inset -2px -2px 4px var(--color-sombra-inset), / Sombra interna /
-        0 4px 8px var(--color-sombra-elemento);       / Sombra externa /
+    background: radial-gradient(circle at 30% 30%, #f4d47f, #d4a548);
+    border-radius: 50%;
+    box-shadow: 
+        inset -2px -2px 4px rgba(0,0,0,0.3),
+        0 4px 8px rgba(0,0,0,0.3);
 }
 
-/ Posicionamiento específico de los adornos /
-.ornament-top-left {
-    top: 15px;
-    left: 15px;
-}
+.ornament-top-left { top: 15px; left: 15px; }
+.ornament-top-right { top: 15px; right: 15px; }
+.ornament-bottom-left { bottom: 15px; left: 15px; }
+.ornament-bottom-right { bottom: 15px; right: 15px; }
 
-.ornament-top-right {
-    top: 15px;
-    right: 15px;
-}
-
-.ornament-bottom-left {
-    bottom: 15px;
-    left: 15px;
-}
-
-.ornament-bottom-right {
-    bottom: 15px;
-    right: 15px;
-}
-
-/ Línea divisoria decorativa superior /
+/* Líneas decorativas */
 .cartel-line-top,
-.cartel-line-bottom { / Consolidación de estilos para ambas líneas /
+.cartel-line-bottom {
     position: absolute;
-    left: var(--espaciado-lateral-linea);
-    right: var(--espaciado-lateral-linea);
-    height: var(--altura-linea);
+    left: 20px;
+    right: 20px;
+    height: 3px;
     background: linear-gradient(
         90deg,
         transparent 0%,
-        var(--color-linea-gradiente-inicio) 10%,
-        var(--color-linea-gradiente-medio) 50%,
-        var(--color-linea-gradiente-inicio) 90%,
+        #8B6914 10%,
+        #C9A46A 50%,
+        #8B6914 90%,
         transparent 100%
     );
-    / Sombreado para dar relieve y un ligero brillo /
-    box-shadow:
-        0 2px 4px var(--color-sombra-elemento), / Sombra externa /
-        inset 0 1px 0 var(--color-sombra-inset-claro); / Brillo interno superior /
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
-.cartel-line-top {
-    top: 50px;
-}
+.cartel-line-top { top: 50px; }
+.cartel-line-bottom { bottom: 50px; }
 
-.cartel-line-bottom {
-    bottom: 50px;
-}
-
-/ Animación de balanceo suave para el cartel principal /
+/* Animación de balanceo */
 @keyframes balanceo-cartel {
-    0%, 100% {
-        transform: rotate(var(--angulo-rotacion-balanceo-min));
-    }
-    50% {
-        transform: rotate(var(--angulo-rotacion-balanceo-max));
-    }
+    0%,100% { transform: rotate(-1.2deg); }
+    50% { transform: rotate(-1.8deg); }
 }
 
-/ Aplicación de la animación al contenedor principal del cartel /
-pregunta-container {
-    animation: balanceo-cartel var(--duracion-balanceo) ease-in-out infinite;
-    / Se asume que pregunta-container es el elemento que contiene el cartel /
-    / Se podrían añadir estilos de padding o margin aquí si son necesarios /
+#pregunta-container {
+    position: relative;
+    animation: balanceo-cartel 6s ease-in-out infinite;
+    transform-origin: top center;
 }
 
-/ Efecto de papel envejecido / textura /
+/* Efecto papel envejecido */
 .cartel-textura {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    border-radius: var(--radio-cartel-textura);
-    background:
-        radial-gradient(ellipse at 20% 30%, var(--color-textura-radial-1) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 80%, var(--color-textura-radial-2) 0%, transparent 40%);
-    pointer-events: none; / Asegura que la textura no interfiera con eventos del ratón /
-    z-index: 1; / Asegura que esté por encima del contenido base pero debajo de otros elementos si los hubiera /
+    border-radius: 8px;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(139,69,19,0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
 }
 
-/ Lazos decorativos laterales /
+/* Lazos laterales */
 .lazo-decorativo {
     position: absolute;
-    font-size: 2.5rem; / Tamaño de fuente base /
-    text-shadow: 2px 2px 4px var(--color-sombra-texto); / Sombra para legibilidad /
-    animation: oscilacion var(--duracion-oscilacion) ease-in-out infinite;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: oscilacion 3s ease-in-out infinite;
 }
 
-.lazo-izquierda {
-    left: -50px; / Posicionado fuera del contenedor principal /
-    top: 50%;
-    transform: translateY(-50%); / Centrado verticalmente /
-    animation-delay: 0s; / Retraso de animación /
-}
+.lazo-izquierda { left: -50px; top: 50%; transform: translateY(-50%); animation-delay: 0s; }
+.lazo-derecha { right: -50px; top: 50%; transform: translateY(-50%); animation-delay: 1.5s; }
 
-.lazo-derecha {
-    right: -50px; / Posicionado fuera del contenedor principal /
-    top: 50%;
-    transform: translateY(-50%); / Centrado verticalmente /
-    animation-delay: 1.5s; / Retraso de animación /
-}
-
-/ Animación de oscilación para los lazos /
 @keyframes oscilacion {
-    0%, 100% {
-        transform: translateY(-50%) rotateZ(var(--angulo-rotacion-oscilacion-min));
-    }
-    50% {
-        transform: translateY(-50%) rotateZ(var(--angulo-rotacion-oscilacion-max));
-    }
+    0%,100% { transform: translateY(-50%) rotateZ(-8deg); }
+    50% { transform: translateY(-50%) rotateZ(8deg); }
 }
 
-/ --- Responsivo --- /
+/* Responsivo */
 @media (max-width: 768px) {
-    / Ajustes para pantallas medianas y pequeñas /
-
-    / Reducción de la altura de las esquinas decorativas /
     .cartel-wrapper::before,
     .cartel-wrapper::after {
         height: 120px;
-        top: -120px; / Ajuste de la posición superior /
+        top: -120px;
     }
 
-    / Ajuste de padding para el contenedor del cartel en pantallas pequeñas /
-    pregunta-container {
-        padding: 60px 50px;
-  }
+    #pregunta-container { padding: 60px 50px; }
 
-    / Ajuste de tamaño y posición de los lazos decorativos /
-    .lazo-decorativo {
-        font-size: 1.8rem; / Tamaño de fuente reducido /
-        left: -35px; / Ajuste de posición izquierda /
-        right: -35px; / Ajuste de posición derecha /
+    .lazo-izquierda { left: -35px; }
+    .lazo-derecha { right: -35px; }
+    .lazo-decorativo { font-size: 1.8rem; }
 }
-  
