@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Trivia Rawr</title>
-<link rel="stylesheet" href="css/styles.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Trivia</title>
 </head>
 <body>
 
-<h1>Trivia Universitaria</h1>
-<h2>Escanea una categoría</h2>
+    <h1>Elegí una categoría</h1>
 
-<div class="categorias">
-    <div><h3>Fama</h3><div id="qr-fama"></div></div>
-    <div><h3>Vinculos</h3><div id="qr-vinculos"></div></div>
-    <div><h3>Resignación</h3><div id="qr-resignacion"></div></div>
-    <div><h3>Felicidad</h3><div id="qr-felicidad"></div></div>
-    <div><h3>Meteorito</h3><div id="qr-meteorito"></div></div>
-    <div><h3>Proyecto</h3><div id="qr-proyecto"></div></div>
-</div>
-
-<script>
-const baseURL = "https://azkeele.github.io/trivia-rawr/categoria.html?cat=";
-const categorias = [
-"fama",
-"vinculos",
-"resignacion",
-"felicidad",
-"meteorito",
-"proyecto"
-];
-
-categorias.forEach(cat => {
-    new QRCode(document.getElementById("qr-" + cat), {
-        text: baseURL + cat,
-        width: 150,
-        height: 150
-    });
-});
-</script>
+    <a href="juego.html?cat=fama">Fama</a><br>
+    <a href="juego.html?cat=vinculos">Vinculos</a><br>
+    <a href="juego.html?cat=resignacion">Resignacion</a><br>
+    <a href="juego.html?cat=felicidad">Felicidad</a><br>
+    <a href="juego.html?cat=meteorito">Meteorito</a><br>
+    <a href="juego.html?cat=proyecto">Proyecto</a>
 
 </body>
 </html>
