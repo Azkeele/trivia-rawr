@@ -1,6 +1,6 @@
 /* Original styles preserved */
 body {
-    background-color: #f0f0f0;
+    background-color: #D4A017;
     font-family: Arial, sans-serif;
 }
 #tituloCategoria {
@@ -27,7 +27,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     font-style: italic;
-    color: #FFF8E7;
+    color: #222222;
 }
 
 h1 {
@@ -70,7 +70,7 @@ h3 {
 #pregunta {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: #d8a063;
+    color: #FFF8E7;
     text-shadow: 0 1px 1px rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.15);
     padding: 10px;
