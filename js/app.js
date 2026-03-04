@@ -78,6 +78,7 @@ function verificarRespuesta(indice) {
 }
     
 if (categoria && basePreguntas[categoria]) {
-    mostrarPregunt();
+
+    mostrarPregunta();
 
 }
