@@ -9,7 +9,7 @@ document.getElementById("tituloCategoria").innerText =
 /* 🎨 Fondos por categoría */
 const fondosCategorias = {
     fama: "url('img/fama.jpg')",
-    vinculos: "url('img/vinculos.jpg')",
+    vinculos: "url('img/vínculos.jpg')",
     resignacion: "url('img/resignacion.jpg')",
     felicidad: "url('img/felicidad.jpg')",
     meteorito: "url('img/meteorito.jpg')",
