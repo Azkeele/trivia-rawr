@@ -26,9 +26,24 @@ h1, h2, h3 {
 }
 /* DECORACIONES TEATRALES MEJORADAS */
 .cartel-wrapper {
-    position: relative;
+    position: relative;   
+    width: 800px;
+    max-width: 90%;
+    margin: 60px auto;
+}
+/* Capas de decoraciones externas */
+.ornament-outer,
+.linea-outer-top,
+.linea-outer-bottom {
+    position: absolute;
+    z-index: 1;
 }
 
+/* Cartel principal encima */
+#pregunta-container {
+    position: relative;
+    z-index: 2;
+}
 #pregunta-container {
     position: relative;
     min-height: 300px;
@@ -233,3 +248,29 @@ h1, h2, h3 {
         right: -35px;
     }
 }
+/* Ornamentos exteriores */
+.ornament-outer {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #f4d47f, #d4a548);
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.outer-top-left { top: -20px; left: -20px; }
+.outer-top-right { top: -20px; right: -20px; }
+.outer-bottom-left { bottom: -20px; left: -20px; }
+.outer-bottom-right { bottom: -20px; right: -20px; }
+
+/* Líneas exteriores */
+.linea-outer-top,
+.linea-outer-bottom {
+    left: -10px;
+    right: -10px;
+    height: 4px;
+    background: linear-gradient(90deg, #8B6914, #C9A46A, #8B6914);
+}
+
+.linea-outer-top { top: -10px; }
+.linea-outer-bottom { bottom: -10px; }
+
