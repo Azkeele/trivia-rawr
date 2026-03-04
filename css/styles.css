@@ -492,4 +492,16 @@ h2#tituloCategoria {
         top: -80vh;
     }
 
+    body {
+        background: linear-gradient(135deg, #f5deb3 0%, #daa520 50%, #f5deb3 100%);
+        background-repeat: no-repeat;
+        background-size: cover;          /* ocupa toda la pantalla */
+        background-position: center;
+        background-attachment: fixed;    /* mantiene efecto parallax ligero */
+    }
+
+    #pregunta-container {
+        background-size: cover;          
+    }
 }
+
