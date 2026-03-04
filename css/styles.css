@@ -4,20 +4,23 @@ body {
     text-align: center;
     padding: 40px;
     min-height: 100vh;
-    transition: background 0.6s ease;
 
+    /* Fondo imagen pantalla completa */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    transition: background 0.6s ease;
 }
 
-/* Capa suave encima del fondo */
+/* Capa suave para que el texto se lea mejor */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
     z-index: -1;
 }
 
@@ -30,17 +33,17 @@ h1 {
     animation: aparecer 0.8s ease;
 }
 
-/* Contenedor principal estilo espuma teatral */
+/* Contenedor principal */
 #pregunta-container {
-    background: #ffffff;
+    background: rgba(255,255,255,0.95);
     padding: 50px;
     border-radius: 45px;
     max-width: 680px;
     margin: 40px auto;
     border: 5px solid #f0e6d6;
     box-shadow:
-        0 12px 0 #d8d2c4,
-        0 25px 40px rgba(0,0,0,0.15);
+        0 15px 0 #d8d2c4,
+        0 30px 50px rgba(0,0,0,0.2);
     animation: aparecer 0.8s ease;
 }
 
@@ -51,7 +54,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Botones caricaturescos */
+/* Botones */
 button {
     display: block;
     margin: 18px auto;
@@ -86,7 +89,7 @@ button:disabled {
     margin-top: 30px;
     font-size: 1.4rem;
     font-weight: bold;
-    color: #555;
+    color: #333;
     animation: aparecer 0.5s ease;
 }
 
