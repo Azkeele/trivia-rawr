@@ -29,9 +29,26 @@ body {
     font-style: italic;
     color: #5a3b1c;
 }
-h1, h2, h3 {
-    color: #352617c2;
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #2b1a08;
     text-align: center;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #3a2616;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #2b1a08;
 }
 .cartel-wrapper {
     position: relative;
@@ -58,6 +75,12 @@ h1, h2, h3 {
 
 #opciones {
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #2b1a08;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 }
 #pregunta-container {
     position: relative;
