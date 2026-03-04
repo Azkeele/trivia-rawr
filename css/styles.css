@@ -4,103 +4,28 @@ body {
     text-align: center;
     padding: 40px;
     min-height: 100vh;
-
-    /* Fondo imagen pantalla completa */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    transition: background 0.6s ease;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Capa suave para que el texto se lea mejor */
+/* Fondo real */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255,255,255,0.35);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+/* Capa suave encima */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.4);
     backdrop-filter: blur(4px);
     z-index: -1;
-}
-
-/* Título */
-h1 {
-    font-size: 3rem;
-    color: #3a3a3a;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    animation: aparecer 0.8s ease;
-}
-
-/* Contenedor principal */
-#pregunta-container {
-    background: rgba(255,255,255,0.95);
-    padding: 50px;
-    border-radius: 45px;
-    max-width: 680px;
-    margin: 40px auto;
-    border: 5px solid #f0e6d6;
-    box-shadow:
-        0 15px 0 #d8d2c4,
-        0 30px 50px rgba(0,0,0,0.2);
-    animation: aparecer 0.8s ease;
-}
-
-/* Texto pregunta */
-#pregunta {
-    font-size: 1.5rem;
-    color: #444;
-    margin-bottom: 30px;
-}
-
-/* Botones */
-button {
-    display: block;
-    margin: 18px auto;
-    padding: 18px 35px;
-    font-size: 1.15rem;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #ffd97d;
-    color: #3a3a3a;
-    box-shadow: 0 8px 0 #e6b95c;
-    transition: all 0.15s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.97);
-    box-shadow: 0 4px 0 #e6b95c;
-}
-
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* Resultado */
-#resultado {
-    margin-top: 30px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #333;
-    animation: aparecer 0.5s ease;
-}
-
-/* Animación */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
