@@ -17,10 +17,12 @@ h1, h2, h3 {
 
 #pregunta-container {
     position: relative;
-    background: linear-gradient(135deg, #f5deb3, #e6c27a);
+    background-image: url("../assets/kraft textura.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     padding: 80px 60px;
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(71, 19, 105, 0.479);
 }
 /* DECORACIONES TEATRALES MEJORADAS */
 
