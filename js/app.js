@@ -1,8 +1,18 @@
 const params = new URLSearchParams(window.location.search);
 const categoria = params.get("cat");
 
-document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
-document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
+const titulo = document.getElementById("tituloCategoria");
+const preguntaElemento = document.getElementById("pregunta");
+const opcionesElemento = document.getElementById("opciones");
+const resultadoElemento = document.getElementById("resultado");
+
+/* Si la categoría no existe, evitamos que explote */
+if (!categoria || !basePreguntas[categoria]) {
+    titulo.innerText = "Categoría no válida";
+    preguntaElemento.innerText = "No se encontraron preguntas.";
+} else {
+    titulo.innerText = categoria.toUpperCase();
+}
 
 /* 🎨 Colores por categoría */
 const coloresCategorias = {
@@ -18,49 +28,50 @@ if (coloresCategorias[categoria]) {
     document.body.style.background = coloresCategorias[categoria];
 }
 
-let preguntasDisponibles = [...basePreguntas[categoria]];
+let preguntasDisponibles = basePreguntas[categoria]
+    ? [...basePreguntas[categoria]]
+    : [];
+
 let preguntaActual = null;
 
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
 function obtenerPreguntaAleatoria() {
     if (preguntasDisponibles.length === 0) {
-        document.getElementById("pregunta").innerText = "No hay más preguntas.";
-        document.getElementById("opciones").innerHTML = "";
+        preguntaElemento.innerText = "No hay más preguntas.";
+        opcionesElemento.innerHTML = "";
         return null;
     }
+
     const index = Math.floor(Math.random() * preguntasDisponibles.length);
     return preguntasDisponibles.splice(index, 1)[0];
 }
+
 function mostrarPregunta() {
     preguntaActual = obtenerPreguntaAleatoria();
     if (!preguntaActual) return;
-    document.getElementById("pregunta").innerText = preguntaActual.pregunta;
-    const opcionesDiv = document.getElementById("opciones");
-    opcionesDiv.innerHTML = "";
+
+    preguntaElemento.innerText = preguntaActual.pregunta;
+    opcionesElemento.innerHTML = "";
+    resultadoElemento.innerText = "";
+
     preguntaActual.opciones.forEach((opcion, index) => {
         const btn = document.createElement("button");
         btn.innerText = opcion;
         btn.onclick = () => verificarRespuesta(index);
-        opcionesDiv.appendChild(btn);
+        opcionesElemento.appendChild(btn);
     });
-    document.getElementById("resultado").innerText = "";
 }
+
 function verificarRespuesta(indice) {
     const botones = document.querySelectorAll("#opciones button");
     botones.forEach(btn => btn.disabled = true);
+
     if (indice === preguntaActual.correcta) {
-        document.getElementById("resultado").innerText = "Correcto ✅";
+        resultadoElemento.innerText = "Correcto ✅";
     } else {
-        document.getElementById("resultado").innerText = "Incorrecto ❌";
+        resultadoElemento.innerText = "Incorrecto ❌";
     }
 }
-mostrarPregunta();
+
+if (categoria && basePreguntas[categoria]) {
+    mostrarPregunta();
+}
