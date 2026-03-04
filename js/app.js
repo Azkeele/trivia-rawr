@@ -67,28 +67,19 @@ function mostrarPregunta() {
 const resultadoElemento = document.getElementById("resultado");
 
 function verificarRespuesta(indice) {
-      // Selecciona todos los botones dentro del contenedor de opciones
-        const botones = document.querySelectorAll("#opciones button");
 
-          // Recorre todos los botones
-            botones.forEach((btn, i) => {
-                btn.disabled = true; // deshabilita todos los botones después de un clic
+    const botones document.querySelectorAll("#opciones button");
 
-                    // Marca el botón correcto
-                        if (i === preguntaActual.correcta) {
-                              btn.classList.add("correcta"); // verde
-                                  } 
-                                      // Marca el botón que se clickeó incorrectamente
-                                          else if (i === indice) {
-                                                btn.classList.add("incorrecta"); // rojo
-                                                    }
-                                                      });
+    botones.forEach(btn btn.disabled true);
 
-                                                        // Muestra el resultado en pantalla
-                                                          if (indice === preguntaActual.correcta) {
-                                                              resultadoElemento.innerText = "Correcto";
-                                                                } else {
-                                                                    resultadoElemento.innerText = "Incorrecto";
-                                                                      }
-                                                                      }
-}
+    
+
+    if (indice === preguntaActual.correcta) {
+    resultadoElemento.innerText "Correcto";
+    } else { 
+    resultadoElemento.innerText = "Incorrecto";
+    }
+     if (categoria && basePreguntas [categoria]) {
+        mostrarPregunta();
+
+     }
