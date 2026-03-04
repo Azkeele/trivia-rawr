@@ -29,76 +29,44 @@ body::after {
     backdrop-filter: blur(4px);
     z-index: -1;
 } 
-
 #pregunta-container {
     position: relative;
-    padding: 70px 50px;
+    padding: 60px 40px;
     max-width: 720px;
-    margin: 120px auto;
-    border-radius: 10px;
-    border: 14px solid #5a341c;
+    margin: 100px auto;
+    border-radius: 14px;
 
-    /* 🪵 Madera más orgánica */
     background:
-        repeating-linear-gradient(
-            85deg,
-            #d79a5b 0px,
-            #d79a5b 4px,
-            #c68642 4px,
-            #c68642 10px,
-            #b87333 10px,
-            #b87333 16px
-        );
+        linear-gradient(145deg, #d9a86c, #c58a47);
+
+    border: 6px solid #6b3f1f;
 
     box-shadow:
-        0 40px 80px rgba(0,0,0,0.55),
-        inset 0 8px 20px rgba(255,255,255,0.25),
-        inset 0 -10px 25px rgba(0,0,0,0.35);
+        0 20px 40px rgba(0,0,0,0.35);
 
-    transform: rotate(-1.2deg);
-    clip-path: polygon(
-        2% 0%, 98% 1%,
-        100% 94%, 96% 100%,
-        4% 99%, 0% 95%
-    );
-
+    transform: rotate(-0.5deg);
     z-index: 1;
 }
 #pregunta-container::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 10px;
-    background: radial-gradient(
-        circle at 30% 20%,
-        rgba(255,255,255,0.15),
-        transparent 60%
-    );
+    border-radius: 14px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.04) 0px,
+            rgba(255,255,255,0.04) 3px,
+            rgba(0,0,0,0.03) 3px,
+            rgba(0,0,0,0.03) 6px
+        );
+
     pointer-events: none;
 }
-#pregunta-container::before,
-#pregunta-container::after {
-    content: "";
-    position: absolute;
-    top: -130px;
-    width: 6px;
-    height: 140px;
 
-    background: repeating-linear-gradient(
-        45deg,
-        #c19a6b,
-        #c19a6b 6px,
-        #a67c52 6px,
-        #a67c52 12px
-    );
-
-    z-index: -1;
+#pregunta {
+    color: #3a1f0f;
+    font-size: 1.6rem;
 }
 
-#pregunta-container::before {
-    left: 120px;
-}
-
-#pregunta-container::after {
-    right: 120px;
-}
