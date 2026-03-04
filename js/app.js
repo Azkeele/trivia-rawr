@@ -87,4 +87,4 @@ function verificarRespuesta(indice) {
                                                                                         resultadoElemento.innerText = "";
                                                                                             }, 1500);
                                                                                             }
-}
+
