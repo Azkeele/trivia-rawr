@@ -32,19 +32,36 @@ body::after {
 
 #pregunta-container {
     position: relative;
-    background: linear-gradient(145deg, #f4d19b, #e8b977);
     padding: 70px 50px;
-    border-radius: 14px;
+    border-radius: 12px;
     max-width: 720px;
     margin: 120px auto;
-    border: 10px solid #8b5e34;
+    border: 12px solid #6b4226;
+    
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #d9a066 0px,
+            #d9a066 6px,
+            #c68642 6px,
+            #c68642 12px
+        ),
+        linear-gradient(145deg, #e0a96d, #b7791f);
 
     box-shadow:
-        0 30px 60px rgba(0,0,0,0.45),
-        inset 0 6px 14px rgba(255,255,255,0.4);
+        0 35px 70px rgba(0,0,0,0.45),
+        inset 0 6px 15px rgba(255,255,255,0.35),
+        inset 0 -6px 15px rgba(0,0,0,0.25);
 
     transform: rotate(-1deg);
     z-index: 1;
+}
+#pregunta-container {
+    clip-path: polygon(
+        2% 0%, 98% 1%,
+        100% 95%, 97% 100%,
+        3% 99%, 0% 95%
+    );
 }
 #pregunta-container::before,
 #pregunta-container::after {
