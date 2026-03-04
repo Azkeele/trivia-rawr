@@ -94,7 +94,7 @@ h3 {
     background-repeat: no-repeat;
 
     padding: 95px 60px 85px 60px
-    border-radius: 12px;
+    border-radius; 12px;
     box-shadow: 0 15px 40px rgba(71, 19, 105, 0.479);
 
     animation: balanceo-cartel 6s ease-in-out infinite;
@@ -379,4 +379,12 @@ h3 {
         #8B6914 80%,
         transparent 100%
     );
+}
+h2#tituloCategoria {
+    font-family: 'Playfair Display', serif;
+}
+
+#opciones,
+#opciones * {
+    font-family: 'Montserrat', sans-serif;
 }
