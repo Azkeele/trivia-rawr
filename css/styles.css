@@ -248,29 +248,32 @@ h1, h2, h3 {
         right: -35px;
     }
 }
-/* Ornamentos exteriores */
+/* Ornamentos en esquinas de la pantalla */
 .ornament-outer {
-    width: 40px;
-    height: 40px;
+    position: fixed;
+    width: 50px;
+    height: 50px;
     background: radial-gradient(circle at 30% 30%, #f4d47f, #d4a548);
     border-radius: 50%;
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    z-index: 999;
 }
 
-.outer-top-left { top: -20px; left: -20px; }
-.outer-top-right { top: -20px; right: -20px; }
-.outer-bottom-left { bottom: -20px; left: -20px; }
-.outer-bottom-right { bottom: -20px; right: -20px; }
+.outer-top-left { top: 20px; left: 20px; }
+.outer-top-right { top: 20px; right: 20px; }
+.outer-bottom-left { bottom: 20px; left: 20px; }
+.outer-bottom-right { bottom: 20px; right: 20px; }
 
-/* Líneas exteriores */
+/* Líneas arriba y abajo de la pantalla */
 .linea-outer-top,
 .linea-outer-bottom {
-    left: -10px;
-    right: -10px;
-    height: 4px;
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    height: 5px;
     background: linear-gradient(90deg, #8B6914, #C9A46A, #8B6914);
+    z-index: 998;
 }
 
-.linea-outer-top { top: -10px; }
-.linea-outer-bottom { bottom: -10px; }
-
+.linea-outer-top { top: 10px; }
+.linea-outer-bottom { bottom: 10px; }
