@@ -27,7 +27,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     font-style: italic;
-    color: #5a3b1c;
+    color: #FFF8E7;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h2 {
 h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #2b1a08;
+    color: #FFF8E7;
 }
 .cartel-wrapper {
     position: relative;
