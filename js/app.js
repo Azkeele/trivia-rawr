@@ -63,26 +63,31 @@ function mostrarPregunta() {
         opcionesElemento.appendChild(btn);
     })
     
-}
+
 
 function verificarRespuesta(indice) {
-     const botones = document.querySelectorAll("#opciones button");
-     botones.forEach((btn, i) => {
-     btn.disabled = true;
+      // Selecciona todos los botones dentro del contenedor de opciones
+        const botones = document.querySelectorAll("#opciones button");
 
-      if (i === preguntaActual.correcta) {
-     btn.classList.add("correcta");   // aplica verde al correcto
-       } else if (i === indice) {
-      btn.classList.add("incorrecta"); // aplica rojo al que se clickeó mal
-       
-      }
-     });
+          // Recorre todos los botones
+            botones.forEach((btn, i) => {
+                btn.disabled = true; // deshabilita todos los botones después de un clic
 
-      if (indice === preguntaActual.correcta) {
-                    
-      resultadoElemento.innerText = "Correcto";
-      } else {
-     resultadoElemento.innerText = "Incorrecto";
+                    // Marca el botón correcto
+                        if (i === preguntaActual.correcta) {
+                              btn.classList.add("correcta"); // verde
+                                  } 
+                                      // Marca el botón que se clickeó incorrectamente
+                                          else if (i === indice) {
+                                                btn.classList.add("incorrecta"); // rojo
+                                                    }
+                                                      });
 
-      }
-    }
+                                                        // Muestra el resultado en pantalla
+                                                          if (indice === preguntaActual.correcta) {
+                                                              resultadoElemento.innerText = "Correcto ✅";
+                                                                } else {
+                                                                    resultadoElemento.innerText = "Incorrecto ❌";
+                                                                      }
+                                                                      }
+}
