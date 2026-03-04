@@ -111,7 +111,7 @@ h1, h2, h3 {
     transform-origin: top center;
 }
 
-/* Efecto papel envejecido */
+/* Textura de papel envejecido */
 .cartel-textura {
     position: absolute;
     width: 100%;
@@ -142,7 +142,93 @@ h1, h2, h3 {
     50% { transform: translateY(-50%) rotateZ(8deg); }
 }
 
-/* Responsivo */
+/* =======================
+   TARJETAS DE CATEGORÍAS
+======================= */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+.categoria-card {
+    position: relative;
+    background-image: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2"/></filter><rect width="100" height="100" fill="none" filter="url(%23noise)" opacity="0.05"/></svg>'),
+        linear-gradient(135deg, #f5deb3 0%, #daa520 50%, #f5deb3 100%);
+    background-size: 100px 100px, 100%;
+    border: 6px solid #8B4513;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    transform: perspective(1000px) rotateY(-1deg) rotateX(1deg);
+    transition: all 0.3s ease;
+    animation: balanceo-tarjeta 5s ease-in-out infinite;
+}
+
+.categoria-card:hover {
+    animation-play-state: paused;
+    transform: perspective(1000px) rotateY(1deg) rotateX(-1deg) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Adornos de esquina de la tarjeta */
+.categoria-card::before,
+.categoria-card::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #B8860B);
+    border-radius: 50%;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.categoria-card::before { top: 10px; left: 10px; }
+.categoria-card::after { bottom: 10px; right: 10px; }
+
+.categoria-card h3 {
+    font-size: 1.4em;
+    color: #8B0000;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.categoria-card div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.categoria-card div svg {
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Animación de balanceo tarjeta */
+@keyframes balanceo-tarjeta {
+    0%,100% { transform: perspective(1000px) rotateY(-1deg) rotateX(1deg); }
+    50% { transform: perspective(1000px) rotateY(1deg) rotateX(-1deg); }
+}
+
+/* Línea decorativa separadora */
+.separador-decorativo {
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #8B4513 10%, #C9A46A 50%, #8B4513 90%, transparent 100%);
+    margin: 40px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* =======================
+   RESPONSIVO
+======================= */
 @media (max-width: 768px) {
     .cartel-wrapper::before,
     .cartel-wrapper::after {
@@ -155,4 +241,13 @@ h1, h2, h3 {
     .lazo-izquierda { left: -35px; }
     .lazo-derecha { right: -35px; }
     .lazo-decorativo { font-size: 1.8rem; }
+
+    .categorias {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .categoria-card { padding: 15px; }
+    .categoria-card h3 { font-size: 1.1em; }
 }
