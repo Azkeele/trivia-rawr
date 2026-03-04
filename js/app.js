@@ -65,16 +65,22 @@ function mostrarPregunta() {
 }
 
 function verificarRespuesta(indice) {
-    const botones = document.querySelectorAll("#opciones button");
-    botones.forEach(btn => btn.disabled = true);
+        const botones = document.querySelectorAll("#opciones button");
+            botones.forEach((btn, i) => {
+                    btn.disabled = true;
 
-    if (indice === preguntaActual.correcta) {
-        resultadoElemento.innerText = "Correcto";
-    } else {
-        resultadoElemento.innerText = "Incorrecto";
-    }
-}
+                            if (i === preguntaActual.correcta) {
+                                        btn.classList.add("correcta");   // aplica verde al correcto
+                                                } else if (i === indice) {
+                                                            btn.classList.add("incorrecta"); // aplica rojo al que se clickeó mal
+                                                                    }
+                                                                        });
 
-if (categoria && basePreguntas[categoria]) {
-    mostrarPregunta();
-}
+                                                                            if (indice === preguntaActual.correcta) {
+                                                                                    resultadoElemento.innerText = "Correcto";
+                                                                                        } else {
+                                                                                                resultadoElemento.innerText = "Incorrecto";
+                                                                                                    }
+                                                                                                }
+
+                                

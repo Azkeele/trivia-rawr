@@ -394,7 +394,7 @@ h2#tituloCategoria {
     font-size: 1.1rem;
 
     background: rgba(139, 105, 20, 0.15); /* dorado suave translúcido */
-    color: #222222;
+    color: #FFF8E7;
 
     border: 2px solid #8B6914;
     border-radius: 8px;
@@ -415,7 +415,7 @@ h2#tituloCategoria {
 }
 #opciones button.correcta {
     background: #3f6b2a;
-    color: #3f6b2a;
+    color: #FFF8E7;
     border-color: #2e4d1f;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 
@@ -423,7 +423,7 @@ h2#tituloCategoria {
 
 #opciones button.incorrecta {
     background: #7a2a2a;
-    color: #7a2a2a;
+    color: #FFF8E7;
     border-color: #5a1f1f;
 }
 #opciones button:disabled {
