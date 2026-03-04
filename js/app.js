@@ -61,23 +61,28 @@ function mostrarPregunta() {
         btn.innerText = opcion;
         btn.onclick = () => verificarRespuesta(index);
         opcionesElemento.appendChild(btn);
-    });
+    })
+    
 }
+
 function verificarRespuesta(indice) {
-        const botones = document.querySelectorAll("#opciones button");
-            botones.forEach((btn, i) => {
-                    btn.disabled = true;
+     const botones = document.querySelectorAll("#opciones button");
+     botones.forEach((btn, i) => {
+     btn.disabled = true;
 
-                            if (i === preguntaActual.correcta) {
-                                        btn.classList.add("correcta");   // aplica verde al correcto
-                                                } else if (i === indice) {
-                                                            btn.classList.add("incorrecta"); // aplica rojo al que se clickeó mal
-                                                                    }
-                                                                        });
+      if (i === preguntaActual.correcta) {
+     btn.classList.add("correcta");   // aplica verde al correcto
+       } else if (i === indice) {
+      btn.classList.add("incorrecta"); // aplica rojo al que se clickeó mal
+       
+      }
+     });
 
-                                                                            if (indice === preguntaActual.correcta) {
-                                                                                    resultadoElemento.innerText = "Correcto";
-                                                                                        } else {
-                                                                                                resultadoElemento.innerText = "Incorrecto";
-                                                                                                    }
-                                                                                                    }
+      if (indice === preguntaActual.correcta) {
+                    
+      resultadoElemento.innerText = "Correcto";
+      } else {
+     resultadoElemento.innerText = "Incorrecto";
+
+      }
+    }
