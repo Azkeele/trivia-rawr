@@ -25,7 +25,25 @@ h1, h2, h3 {
     box-shadow: 0 15px 40px rgba(71, 19, 105, 0.479);
 }
 /* DECORACIONES TEATRALES MEJORADAS */
+.cartel-wrapper {
+    position: relative;
+}
 
+#pregunta-container {
+    position: relative;
+    min-height: 300px;
+}
+
+.cartel-textura {
+    z-index: 1;
+}
+
+.pregunta-container-ornament,
+.cartel-line-top,
+.cartel-line-bottom {
+    position: absolute;
+    z-index: 3;
+}
 /* Esquinas decorativas del cartel */
 .cartel-wrapper::before,
 .cartel-wrapper::after {
