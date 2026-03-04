@@ -63,7 +63,6 @@ function mostrarPregunta() {
         opcionesElemento.appendChild(btn);
     });
 }
-
 function verificarRespuesta(indice) {
         const botones = document.querySelectorAll("#opciones button");
             botones.forEach((btn, i) => {
@@ -81,6 +80,4 @@ function verificarRespuesta(indice) {
                                                                                         } else {
                                                                                                 resultadoElemento.innerText = "Incorrecto";
                                                                                                     }
-                                                                                                }
-
-                                
+                                                                                                    }
