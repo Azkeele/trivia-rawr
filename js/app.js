@@ -1,9 +1,12 @@
+/* Obtener categoría desde la URL */
 const params = new URLSearchParams(window.location.search);
 const categoria = params.get("cat");
 
-document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
+/* Mostrar título */
+document.getElementById("tituloCategoria").innerText =
+    categoria ? categoria.toUpperCase() : "TRIVIA";
 
-/* 🎨 Fondos por categoría (imagenes) */
+/* 🎨 Fondos por categoría */
 const fondosCategorias = {
     fama: "url('img/fama.jpg')",
     vinculos: "url('img/vinculos.jpg')",
@@ -13,17 +16,29 @@ const fondosCategorias = {
     proyecto: "url('img/proyecto.jpg')"
 };
 
-if (fondosCategorias[categoria]) {
+/* Aplicar fondo correctamente SIN que se repita */
+if (categoria && fondosCategorias[categoria]) {
     document.body.style.backgroundImage = fondosCategorias[categoria];
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
 }
 
-/* Preguntas */
-let preguntasDisponibles = [...basePreguntas[categoria]];
+/* ============================= */
+/*        LÓGICA DE JUEGO        */
+/* ============================= */
+
+let preguntasDisponibles = categoria && basePreguntas[categoria]
+    ? [...basePreguntas[categoria]]
+    : [];
+
 let preguntaActual = null;
 
 function obtenerPreguntaAleatoria() {
     if (preguntasDisponibles.length === 0) {
-        document.getElementById("pregunta").innerText = "No hay más preguntas.";
+        document.getElementById("pregunta").innerText =
+            "No hay más preguntas.";
         document.getElementById("opciones").innerHTML = "";
         return null;
     }
@@ -36,7 +51,8 @@ function mostrarPregunta() {
     preguntaActual = obtenerPreguntaAleatoria();
     if (!preguntaActual) return;
 
-    document.getElementById("pregunta").innerText = preguntaActual.pregunta;
+    document.getElementById("pregunta").innerText =
+        preguntaActual.pregunta;
 
     const opcionesDiv = document.getElementById("opciones");
     opcionesDiv.innerHTML = "";
