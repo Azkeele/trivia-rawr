@@ -3,20 +3,21 @@ const categoria = params.get("cat");
 
 document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
 
-/* 🎨 Colores por categoría */
-const coloresCategorias = {
-    fama: "linear-gradient(135deg, #f7d046, #f4a261)",
-    vinculos: "linear-gradient(135deg, #ffafcc, #bde0fe)",
-    resignacion: "linear-gradient(135deg, #b8c0ff, #e0c3fc)",
-    felicidad: "linear-gradient(135deg, #caffbf, #9bf6ff)",
-    meteorito: "linear-gradient(135deg, #bdb2ff, #a0c4ff)",
-    proyecto: "linear-gradient(135deg, #ecb1fa, #fff6b6)"
+/* 🎨 Fondos por categoría (imagenes) */
+const fondosCategorias = {
+    fama: "url('img/fama.jpg')",
+    vinculos: "url('img/vinculos.jpg')",
+    resignacion: "url('img/resignacion.jpg')",
+    felicidad: "url('img/felicidad.jpg')",
+    meteorito: "url('img/meteorito.jpg')",
+    proyecto: "url('img/proyecto.jpg')"
 };
 
-if (coloresCategorias[categoria]) {
-    document.body.style.background = coloresCategorias[categoria];
+if (fondosCategorias[categoria]) {
+    document.body.style.backgroundImage = fondosCategorias[categoria];
 }
 
+/* Preguntas */
 let preguntasDisponibles = [...basePreguntas[categoria]];
 let preguntaActual = null;
 
