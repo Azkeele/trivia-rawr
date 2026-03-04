@@ -55,6 +55,8 @@ h3 {
     width: 800px;
     max-width: 90%;
     margin: 60px auto;
+    animation: balanceo-cartel 3.5s ease-in-out infinite;
+    transform-origin: top center;
 }
 #tituloCategoria {
     font-family: 'Playfair Display', serif;
@@ -80,7 +82,7 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    animation: flotar 3s ease-in-out infinite;
+    
 }
 
 
@@ -94,8 +96,8 @@ h3 {
     background-position: center;     
     background-repeat: no-repeat;
 
-    padding: 95px 60px 85px 60px
-    border-radius; 12px;
+    padding: 95px 60px 85px 60px;
+    border-radius: 12px;
     box-shadow: 0 15px 40px rgba(71, 19, 105, 0.479);
 
     
