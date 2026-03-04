@@ -321,6 +321,56 @@ h3 {
         transform: translateY(-50%) rotateZ(8deg);
     }
 }
+#resultado {
+        position: absolute;          /* sobre el contenedor de la pregunta */
+            top: 50%;
+                left: 50%;
+                    transform: translate(-50%, -50%);
+                        font-size: 2rem;
+                            font-weight: bold;
+                                text-align: center;
+                                    padding: 20px 35px;
+                                        border-radius: 12px;
+                                            color: #FFF;
+                                                pointer-events: none;       /* no interfiere con botones */
+                                                    z-index: 10;                /* encima de todo */
+                                                        opacity: 0;                 /* empieza invisible */
+                                                            transition: all 0.4s ease;
+                                                            }
+
+                                                            /* Correcto */
+                                                            #resultado.correcto {
+                                                                background: linear-gradient(135deg, #4CAF50, #81C784);
+                                                                    border: 2px solid #2e7d32;
+                                                                        box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+                                                                            opacity: 1;
+                                                                                animation: pop 0.4s ease;
+                                                                                }
+
+                                                                                /* Incorrecto */
+                                                                                #resultado.incorrecto {
+                                                                                    background: linear-gradient(135deg, #E53935, #EF5350);
+                                                                                        border: 2px solid #b71c1c;
+                                                                                            box-shadow: 0 0 20px rgba(229, 57, 53, 0.8);
+                                                                                                opacity: 1;
+                                                                                                    animation: shake 0.4s ease;
+                                                                                                    }
+
+                                                                                                    /* Animaciones */
+                                                                                                    @keyframes pop {
+                                                                                                        0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+                                                                                                            70% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+                                                                                                                100% { transform: translate(-50%, -50%) scale(1); }
+                                                                                                                }
+
+                                                                                                                @keyframes shake {
+                                                                                                                    0% { transform: translate(-50%, -50%) rotate(0deg); }
+                                                                                                                        25% { transform: translate(-50%, -50%) rotate(-5deg); }
+                                                                                                                            50% { transform: translate(-50%, -50%) rotate(5deg); }
+                                                                                                                                75% { transform: translate(-50%, -50%) rotate(-5deg); }
+                                                                                                                                    100% { transform: translate(-50%, -50%) rotate(0deg); }
+                                                                                                                                    }
+
 
 /* Responsivo */
 @media (max-width: 768px) {

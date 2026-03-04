@@ -67,18 +67,24 @@ function mostrarPregunta() {
 }
 
 function verificarRespuesta(indice) {
-    const botones = document.querySelectorAll("#opciones button");
-    botones.forEach(btn => btn.disabled = true);
+        const botones = document.querySelectorAll("#opciones button");
+            botones.forEach(btn => btn.disabled = true);
 
-    if (indice === preguntaActual.correcta) {
-        resultadoElemento.innerText = "Correcto";
-    } else { 
-        resultadoElemento.innerText = "Incorrecto";
-    }
-}
-    
-if (categoria && basePreguntas[categoria]) {
+                // Limpiar clases anteriores
+                    resultadoElemento.classList.remove("correcto", "incorrecto");
 
-    mostrarPregunta();
+                        if (indice === preguntaActual.correcta) {
+                                resultadoElemento.innerText = "¡Correcto!";
+                                        resultadoElemento.classList.add("correcto");
+                                            } else { 
+                                                    resultadoElemento.innerText = "Incorrecto";
+                                                            resultadoElemento.classList.add("incorrecto");
+                                                                }
 
+                                                                    // Opcional: desaparecer el cartel después de 1.5s
+                                                                        setTimeout(() => {
+                                                                                resultadoElemento.classList.remove("correcto", "incorrecto");
+                                                                                        resultadoElemento.innerText = "";
+                                                                                            }, 1500);
+                                                                                            }
 }
