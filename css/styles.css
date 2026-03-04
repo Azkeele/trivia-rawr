@@ -24,9 +24,15 @@ h1, h2, h3 {
     letter-spacing: 2px;
 }
 
+
 #pregunta {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
+    color: #2b1a08;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    padding: 10px;
+    border-radius: 6px;
 }
 
 #opciones {
