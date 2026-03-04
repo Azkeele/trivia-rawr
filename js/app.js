@@ -64,6 +64,7 @@ function mostrarPregunta() {
     })
     
 
+const resultadoElemento = document.getElementById("resultado");
 
 function verificarRespuesta(indice) {
       // Selecciona todos los botones dentro del contenedor de opciones
@@ -85,9 +86,9 @@ function verificarRespuesta(indice) {
 
                                                         // Muestra el resultado en pantalla
                                                           if (indice === preguntaActual.correcta) {
-                                                              resultadoElemento.innerText = "Correcto ✅";
+                                                              resultadoElemento.innerText = "Correcto";
                                                                 } else {
-                                                                    resultadoElemento.innerText = "Incorrecto ❌";
+                                                                    resultadoElemento.innerText = "Incorrecto";
                                                                       }
                                                                       }
 }
