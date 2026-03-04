@@ -35,7 +35,15 @@ body::after {
     max-width: 650px;
     margin: 100px auto;
 
-    background: #c9a46a; /* cartón base */
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0,0,0,0.03) 0px,
+            rgba(0,0,0,0.03) 2px,
+            transparent 2px,
+            transparent 6px
+        ),
+        #c9a46a;
 
     border-radius: 6px;
 
@@ -44,27 +52,31 @@ body::after {
 
     transform: rotate(-0.8deg);
 
+    clip-path: polygon(
+        3% 0%, 97% 2%,
+        100% 95%, 96% 100%,
+        4% 98%, 0% 92%
+    );
+
     z-index: 1;
 }
-#pregunta-container::before {
+
+/* Cuerdas */
+#pregunta-container::before,
+#pregunta-container::after {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: 6px;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            rgba(0,0,0,0.03) 0px,
-            rgba(0,0,0,0.03) 2px,
-            transparent 2px,
-            transparent 6px
-        );
-
-    pointer-events: none;
+    top: -100px;
+    width: 4px;
+    height: 100px;
+    background: #e6d3b3;
 }
-clip-path: polygon(
-    3% 0%, 97% 2%,
-    100% 95%, 96% 100%,
-    4% 98%, 0% 92%
-);
+
+#pregunta-container::before {
+    left: 25%;
+}
+
+#pregunta-container::after {
+    right: 25%;
+}
+
