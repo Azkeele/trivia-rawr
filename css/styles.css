@@ -1,100 +1,64 @@
+/* Original styles preserved */
 body {
-    margin: 0;
-    font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: #333;
     text-align: center;
-    padding: 40px;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
 }
 
-/* Fondo real */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: -2;
-}
-body {
-    background-color: #1c1c1c;
-}
-/* Capa suave encima */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    z-index: -1;
-} 
-.cartel-wrapper {
-    position: relative;
-    width: fit-content;
-    margin: 120px auto;
-}
-#pregunta {
-    font-size: 2rem;
-    color: #3a2616;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-/* CUERDAS */
-.cartel-wrapper::before,
-.cartel-wrapper::after {
-    content: "";
+/* Enhanced theatrical poster decorations */
+.corner-ornament {
     position: absolute;
-    top: -140px;
-    width: 6px;
-    height: 140px;
-
-    background: repeating-linear-gradient(
-        45deg,
-        #e8d8b8,
-        #e8d8b8 4px,
-        #c9b38d 4px,
-        #c9b38d 8px
-    );
+    width: 50px;
+    height: 50px;
+    background-image: url('path/to/corner-ornament.png');
+    z-index: 10;
 }
 
-.cartel-wrapper::before {
-    left: 30%;
+.corner-ornament.top-left {
+    top: 0;
+    left: 0;
 }
 
-.cartel-wrapper::after {
-    right: 30%;
+.corner-ornament.top-right {
+    top: 0;
+    right: 0;
 }
 
-/* CARTÓN */
-#pregunta-container {
-    position: relative;
-    padding: 90px 70px;
-    max-width: 850px;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            rgba(0,0,0,0.04) 0px,
-            rgba(0,0,0,0.04) 2px,
-            transparent 2px,
-            transparent 8px
-        ),
-        #c9a46a;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 40px 70px rgba(0,0,0,0.45);
-
-    transform: rotate(-1.2deg);
-
-    clip-path: polygon(
-        2% 0%, 98% 3%,
-        100% 94%, 95% 100%,
-        3% 97%, 0% 92%
-    );
+.corner-ornament.bottom-left {
+    bottom: 0;
+    left: 0;
 }
 
+.corner-ornament.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.rope-texture {
+    background-image: url('path/to/improved-rope-texture.png');
+    background-size: cover;
+    padding: 10px;
+}
+
+.decorative-separator {
+    height: 5px;
+    background-color: gold;
+    margin: 20px 0;
+}
+
+.animation-effect {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
