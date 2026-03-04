@@ -8,6 +8,27 @@ body {
     z-index: 1000;
     margin-top: 80px; /* espacio para que no choque con la línea */
 }
+/* HEADER TEATRAL */
+.header-teatral {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.header-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    color: #2b1a08;
+    margin-bottom: 10px;
+}
+
+.header-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #5a3b1c;
+}
 h1, h2, h3 {
     color: #352617c2;
     text-align: center;
@@ -84,7 +105,35 @@ h1, h2, h3 {
 .cartel-line-bottom {
     z-index: 3;
 }
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
 
+.categoria-card {
+    background: #f5deb3;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.categoria-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2b1a08;
+}
 /* Esquinas decorativas del cartel */
 .cartel-wrapper::before,
 .cartel-wrapper::after {
@@ -300,3 +349,16 @@ h1, h2, h3 {
 
 .linea-outer-top { top: 45px; }
 .linea-outer-bottom { bottom: 45px; }
+.separador-decorativo {
+    width: 60%;
+    height: 3px;
+    margin: 40px auto;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #8B6914 20%,
+        #C9A46A 50%,
+        #8B6914 80%,
+        transparent 100%
+    );
+}
