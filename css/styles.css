@@ -388,3 +388,34 @@ h2#tituloCategoria {
 #opciones * {
     font-family: 'Montserrat', sans-serif;
 }
+#opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#opciones button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+
+    background: rgba(139, 105, 20, 0.15); /* dorado suave translúcido */
+    color: #3a2a14;
+
+    border: 2px solid #8B6914;
+    border-radius: 8px;
+
+    padding: 12px 20px;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+#opciones button:hover {
+    background: rgba(139, 105, 20, 0.35);
+    transform: scale(1.03);
+}
+
+#opciones button:active {
+    transform: scale(0.98);
+}
