@@ -491,5 +491,28 @@ h2#tituloCategoria {
         height: 80vh;
         top: -80vh;
     }
+     .categorias {
+        flex-direction: column; 
+        gap: 30px;              
+        margin-bottom: 60px;    
+    }
+
+    .categoria-card {
+        width: 90%;             
+        padding: 20px;          
+    }
+
+    .categoria-card h3 {
+        font-size: 1.3rem;      
+        margin-bottom: 10px;
+    }
+
+    .categoria-card img {
+        max-width: 80%;         
+        height: auto;
+        margin: 0 auto;         
+        display: block;
+    }
 }
+
 
