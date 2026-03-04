@@ -81,15 +81,23 @@ h3 {
     flex-direction: column;
     gap: 12px;
 }
-}
+
+
 #pregunta-container {
     position: relative;
-    background-image: url("../assets/kraft textura.jpg");
-    background-size: 100% 100%;
+    z-index: 2;
+    min-height: 300px;
+
+    background-image: url("../assets/kraft-textura.jpg");
+    background-size: cover;          
+    background-position: center;     
     background-repeat: no-repeat;
-    padding: 80px 60px;
+
+    padding: 110px 60px 100px 60px;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(71, 19, 105, 0.479);
+
+    animation: balanceo-cartel 6s ease-in-out infinite;
 }
 /* DECORACIONES TEATRALES MEJORADAS */
 .cartel-wrapper {
@@ -107,14 +115,6 @@ h3 {
 }
 
 /* Cartel principal encima */
-#pregunta-container {
-    position: relative;
-    z-index: 2;
-}
-#pregunta-container {
-    position: relative;
-    min-height: 300px;
-}
 
 .cartel-textura {
     z-index: 0;
@@ -274,9 +274,6 @@ h3 {
     }
 }
 
-#pregunta-container {
-    animation: balanceo-cartel 6s ease-in-out infinite;
-}
 
 /* Efecto de papel envejecido */
 .cartel-textura {
@@ -333,9 +330,7 @@ h3 {
         top: -120px;
     }
 
-    #pregunta-container {
-        padding: 60px 50px;
-    }
+
 
     .lazo-decorativo {
         font-size: 1.8rem;
