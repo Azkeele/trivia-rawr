@@ -393,7 +393,7 @@ h2#tituloCategoria {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
 
-    background: rgba(139, 105, 20, 0.15); /* dorado suave translúcido */
+    background: rgba(139, 105, 20, 0.35); /* dorado suave translúcido */
     color: #FFF8E7;
 
     border: 2px solid #8B6914;
@@ -401,6 +401,8 @@ h2#tituloCategoria {
 
     padding: 12px 20px;
     cursor: pointer;
+        
+    
 
     transition: all 0.25s ease;
 }
@@ -408,7 +410,13 @@ h2#tituloCategoria {
 #opciones button:hover {
     background: rgba(139, 105, 20, 0.35);
     transform: scale(1.03);
+
 }
+#opciones button {
+        background: rgba(0,0,0,0.5);
+            color: #FFF;
+            }
+
 
 #opciones button:active {
     transform: scale(0.98);
