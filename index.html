@@ -1,40 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Trivia Rawr</title>
-<link rel="stylesheet" href="css/styles.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Rawr - Categorías</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        /* ESTILOS TEATRALES INTEGRADOS */
+        
+        .header-teatral {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .header-titulo {
+            font-size: 3em;
+            color: #8B0000;
+            text-shadow: 
+                3px 3px 6px rgba(0,0,0,0.3),
+                -2px -2px 4px rgba(255,255,255,0.5);
+            margin: 20px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-subtitulo {
+            font-size: 1.5em;
+            color: #654321;
+            font-style: italic;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* CONTENEDOR DE CATEGORÍAS CON ESTILO TEATRAL */
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .categoria-card {
+            position: relative;
+            background: linear-gradient(135deg, #f5deb3 0%, #daa520 50%, #f5deb3 100%);
+            border: 6px solid #8B4513;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            transform: perspective(1000px) rotateY(-1deg) rotateX(1deg);
+            transition: all 0.3s ease;
+        }
+
+        .categoria-card:hover {
+            transform: perspective(1000px) rotateY(1deg) rotateX(-1deg) scale(1.05);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        /* DECORACIÓN DE ESQUINAS EN TARJETAS */
+        .categoria-card::before,
+        .categoria-card::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle at 30% 30%, #FFD700, #B8860B);
+            border-radius: 50%;
+            box-shadow: inset 0 2px 3px rgba(0,0,0,0.3);
+        }
+
+        .categoria-card::before {
+            top: 10px;
+            left: 10px;
+        }
+
+        .categoria-card::after {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .categoria-card h3 {
+            font-size: 1.4em;
+            color: #8B0000;
+            margin: 15px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .categoria-card div {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* QR DENTRO DE LA TARJETA */
+        .categoria-card div svg {
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        /* ANIMACIÓN SUAVE DE LAS TARJETAS */
+        @keyframes balanceo-tarjeta {
+            0%, 100% {
+                transform: perspective(1000px) rotateY(-1deg) rotateX(1deg);
+            }
+            50% {
+                transform: perspective(1000px) rotateY(1deg) rotateX(-1deg);
+            }
+        }
+
+        .categoria-card {
+            animation: balanceo-tarjeta 5s ease-in-out infinite;
+        }
+
+        /* LÍNEA DECORATIVA DIVISORIA */
+        .separador-decorativo {
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #8B4513 10%, 
+                #C9A46A 50%, 
+                #8B4513 90%, 
+                transparent 100%);
+            margin: 40px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-titulo {
+                font-size: 2em;
+            }
+
+            .header-subtitulo {
+                font-size: 1.2em;
+            }
+
+            .categorias {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 25px;
+                padding: 20px;
+            }
+
+            .categoria-card {
+                padding: 15px;
+            }
+
+            .categoria-card h3 {
+                font-size: 1.1em;
+            }
+        }
+
+        /* TEXTURA DE PAPEL ENVEJECIDO */
+        .categoria-card {
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2"/></filter><rect width="100" height="100" fill="none" filter="url(%23noise)" opacity="0.05"/></svg>'),
+                linear-gradient(135deg, #f5deb3 0%, #daa520 50%, #f5deb3 100%);
+            background-size: 100px 100px, 100%;
+        }
+    </style>
 </head>
 <body>
-<h1>Trivia Universitaria</h1>
-<h2>Escanea una categoría</h2>
+    <!-- HEADER CON ESTILO TEATRAL -->
+    <div class="header-teatral">
+        <h1 class="header-titulo">🎭 Trivia Universitaria 🎭</h1>
+        <h2 class="header-subtitulo">✨ Escanea una categoría ✨</h2>
+        <div class="separador-decorativo"></div>
+    </div>
 
-<div class="categorias">
-    <div><h3>Fama</h3><div id="qr-fama"></div></div>
-    <div><h3>Vínculos</h3><div id="qr-vinculos"></div></div>
-    <div><h3>Resignación</h3><div id="qr-resignacion"></div></div>
-    <div><h3>Felicidad</h3><div id="qr-felicidad"></div></div>
-    <div><h3>Meteorito</h3><div id="qr-meteorito"></div></div>
-    <div><h3>Proyecto</h3><div id="qr-proyecto"></div></div>
-</div>
-<script>
-const baseURL = "https://azkeele.github.io/trivia-rawr/categoria.html?cat=";
-const categorias = [
-"fama",
-"vinculos",
-"resignacion",
-"felicidad",
-"meteorito",
-"proyecto"
-];
-categorias.forEach(cat => {
-    new QRCode(document.getElementById("qr-" + cat), {
-        text: baseURL + cat,
-        width: 150,
-        height: 150
-    });
-});
-</script>
+    <!-- CONTENEDOR DE CATEGORÍAS -->
+    <div class="categorias">
+        <div class="categoria-card">
+            <h3>🌟 Fama</h3>
+            <div id="qr-fama"></div>
+        </div>
+
+        <div class="categoria-card">
+            <h3>🔗 Vínculos</h3>
+            <div id="qr-vinculos"></div>
+        </div>
+
+        <div class="categoria-card">
+            <h3>😔 Resignación</h3>
+            <div id="qr-resignacion"></div>
+        </div>
+
+        <div class="categoria-card">
+            <h3>😊 Felicidad</h3>
+            <div id="qr-felicidad"></div>
+        </div>
+
+        <div class="categoria-card">
+            <h3>☄️ Meteorito</h3>
+            <div id="qr-meteorito"></div>
+        </div>
+
+        <div class="categoria-card">
+            <h3>📋 Proyecto</h3>
+            <div id="qr-proyecto"></div>
+        </div>
+    </div>
+
+    <div class="separador-decorativo"></div>
+
+    <!-- SCRIPT PARA GENERAR QR -->
+    <script>
+        const baseURL = "https://azkeele.github.io/trivia-rawr/categoria.html?cat=";
+        const categorias = [
+            "fama",
+            "vinculos",
+            "resignacion",
+            "felicidad",
+            "meteorito",
+            "proyecto"
+        ];
+
+        categorias.forEach(cat => {
+            new QRCode(document.getElementById("qr-" + cat), {
+                text: baseURL + cat,
+                width: 150,
+                height: 150,
+                colorDark: "#3a2616",
+                colorLight: "#f5deb3"
+            });
+        });
+    </script>
 </body>
 </html>
