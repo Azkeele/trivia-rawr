@@ -430,3 +430,66 @@ h2#tituloCategoria {
     opacity: 0.6;
     cursor: not-allowed;
 }
+/* RESPONSIVO CELULAR */
+@media (max-width: 768px) {
+
+    /* Cartel principal */
+    .cartel-wrapper {
+        width: 95%;
+        margin: 40px auto;
+        animation: balanceo-cartel 4s infinite ease-in-out;
+    }
+
+    #pregunta-container {
+        padding: 60px 25px 50px 25px;
+        min-height: 250px;
+    }
+
+    /* Lazos decorativos */
+    .lazo-decorativo {
+        font-size: 1.8rem;
+    }
+
+    .lazo-izquierda { left: -30px; }
+    .lazo-derecha { right: -30px; }
+
+    /* Texto principal */
+    h1, .header-titulo { font-size: 2rem; }
+    h2, .header-subtitulo { font-size: 1.2rem; }
+    h3, #tituloCategoria { font-size: 1.2rem; }
+
+    /* Tarjetas de categoría */
+    .categorias { gap: 20px; }
+    .categoria-card { width: 160px; padding: 15px; }
+    .categoria-card h3 { font-size: 1.2rem; }
+
+    /* Ornamentos fijos */
+    .ornament-outer { width: 35px; height: 35px; }
+    .outer-top-left { top: 15px; left: 15px; }
+    .outer-top-right { top: 15px; right: 15px; }
+    .outer-bottom-left { bottom: 15px; left: 15px; }
+    .outer-bottom-right { bottom: 15px; right: 15px; }
+
+    /* Líneas de pantalla */
+    .linea-outer-top, .linea-outer-bottom { left: 25px; right: 25px; height: 4px; }
+
+    /* Botones de opciones */
+    #opciones button {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    /* Líneas decorativas del cartel */
+    .cartel-line-top, .cartel-line-bottom {
+        left: 15px;
+        right: 15px;
+    }
+
+    /* Ajuste de las esquinas del cartel */
+    .cartel-wrapper::before,
+    .cartel-wrapper::after {
+        height: 80vh;
+        top: -80vh;
+    }
+
+}
