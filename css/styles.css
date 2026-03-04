@@ -35,15 +35,20 @@ h1, h2, h3 {
 }
 
 .cartel-textura {
-    z-index: 1;
+    z-index: 0;
 }
 
-.pregunta-container-ornament,
+.pregunta-container-ornament {
+    z-index: 4;
+}
+.pregunta-container-ornament {
+    background: red;
+}
 .cartel-line-top,
 .cartel-line-bottom {
-    position: absolute;
     z-index: 3;
 }
+
 /* Esquinas decorativas del cartel */
 .cartel-wrapper::before,
 .cartel-wrapper::after {
