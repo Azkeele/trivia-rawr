@@ -61,25 +61,23 @@ function mostrarPregunta() {
         btn.innerText = opcion;
         btn.onclick = () => verificarRespuesta(index);
         opcionesElemento.appendChild(btn);
-    })
+    });
     
 
-const resultadoElemento = document.getElementById("resultado");
+}
 
 function verificarRespuesta(indice) {
-
-    const botones document.querySelectorAll("#opciones button");
-
-    botones.forEach(btn btn.disabled true);
-
-    
+    const botones = document.querySelectorAll("#opciones button");
+    botones.forEach(btn => btn.disabled = true);
 
     if (indice === preguntaActual.correcta) {
-    resultadoElemento.innerText "Correcto";
+        resultadoElemento.innerText = "Correcto";
     } else { 
-    resultadoElemento.innerText = "Incorrecto";
+        resultadoElemento.innerText = "Incorrecto";
     }
-     if (categoria && basePreguntas [categoria]) {
-        mostrarPregunta();
+}
+    
+if (categoria && basePreguntas[categoria]) {
+    mostrarPregunt();
 
-     }
+}
