@@ -55,7 +55,7 @@ h3 {
     width: 800px;
     max-width: 90%;
     margin: 60px auto;
-    animation: balanceo-cartel 3.5s ease-in-out infinite;
+    animation: balanceo-cartel 4.5s cubic-bezier(.45,.05,.55,.95) infinite;
     transform-origin: top center;
 }
 #tituloCategoria {
@@ -103,12 +103,8 @@ h3 {
     
 }
 /* DECORACIONES TEATRALES MEJORADAS */
-.cartel-wrapper {
-    position: relative;   
-    width: 800px;
-    max-width: 90%;
-    margin: 60px auto;
-}
+
+
 /* Capas de decoraciones externas */
 .ornament-outer,
 .linea-outer-top,
@@ -166,7 +162,8 @@ h3 {
     content: "";
     position: absolute;
     width: 8px;
-    height: 160px;
+    height: 120vh;
+    top: -120vh;
     background: repeating-linear-gradient(
         45deg,
         #e8d8b8 0px,
@@ -178,12 +175,8 @@ h3 {
         #b8a080 7px,
         #b8a080 8px
     );
-    box-shadow: 
-        inset 1px 1px 2px rgba(255,255,255,0.3),
-        inset -1px -1px 2px rgba(0,0,0,0.2),
-        2px 2px 8px rgba(0,0,0,0.4);
-    top: -160px;
 }
+
 
 .cartel-wrapper::before {
     left: 25%;
@@ -269,12 +262,11 @@ h3 {
 
 /* Animación de balanceo suave */
 @keyframes balanceo-cartel {
-    0%, 100% {
-        transform: rotate(-1.2deg);
-    }
-    50% {
-        transform: rotate(-1.8deg);
-    }
+    0%   { transform: rotate(-2deg); }
+    25%  { transform: rotate(1.5deg); }
+    50%  { transform: rotate(-1deg); }
+    75%  { transform: rotate(0.6deg); }
+    100% { transform: rotate(-2deg); }
 }
 
 
@@ -327,12 +319,6 @@ h3 {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .cartel-wrapper::before,
-    .cartel-wrapper::after {
-        height: 120px;
-        top: -120px;
-    }
-
 
 
     .lazo-decorativo {
