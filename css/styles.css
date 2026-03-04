@@ -28,3 +28,47 @@ body::after {
     background: rgba(255,255,255,0.4);
     backdrop-filter: blur(4px);
     z-index: -1;
+} 
+
+#pregunta-container {
+    position: relative;
+    background: linear-gradient(145deg, #f4d19b, #e8b977);
+    padding: 70px 50px;
+    border-radius: 14px;
+    max-width: 720px;
+    margin: 120px auto;
+    border: 10px solid #8b5e34;
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.45),
+        inset 0 6px 14px rgba(255,255,255,0.4);
+
+    transform: rotate(-1deg);
+    z-index: 1;
+}
+#pregunta-container::before,
+#pregunta-container::after {
+    content: "";
+    position: absolute;
+    top: -130px;
+    width: 6px;
+    height: 140px;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #c19a6b,
+        #c19a6b 6px,
+        #a67c52 6px,
+        #a67c52 12px
+    );
+
+    z-index: -1;
+}
+
+#pregunta-container::before {
+    left: 120px;
+}
+
+#pregunta-container::after {
+    right: 120px;
+}
