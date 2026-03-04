@@ -6,15 +6,14 @@ const preguntaElemento = document.getElementById("pregunta");
 const opcionesElemento = document.getElementById("opciones");
 const resultadoElemento = document.getElementById("resultado");
 
-/* Si la categoría no existe, evitamos que explote */
 if (!categoria || !basePreguntas[categoria]) {
-    titulo.innerText = "Categoría no válida";
+    titulo.innerText = "Categoria no valida";
     preguntaElemento.innerText = "No se encontraron preguntas.";
 } else {
     titulo.innerText = categoria.toUpperCase();
 }
 
-/* 🎨 Colores por categoría */
+// Colores por categoria
 const coloresCategorias = {
     fama: "linear-gradient(135deg, #f7d046, #f4a261)",
     vinculos: "linear-gradient(135deg, #ffafcc, #bde0fe)",
@@ -36,7 +35,7 @@ let preguntaActual = null;
 
 function obtenerPreguntaAleatoria() {
     if (preguntasDisponibles.length === 0) {
-        preguntaElemento.innerText = "No hay más preguntas.";
+        preguntaElemento.innerText = "No hay mas preguntas.";
         opcionesElemento.innerHTML = "";
         return null;
     }
@@ -66,9 +65,9 @@ function verificarRespuesta(indice) {
     botones.forEach(btn => btn.disabled = true);
 
     if (indice === preguntaActual.correcta) {
-        resultadoElemento.innerText = "Correcto ✅";
+        resultadoElemento.innerText = "Correcto";
     } else {
-        resultadoElemento.innerText = "Incorrecto ❌";
+        resultadoElemento.innerText = "Incorrecto";
     }
 }
 
