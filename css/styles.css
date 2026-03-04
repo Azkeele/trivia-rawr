@@ -41,9 +41,7 @@ h1, h2, h3 {
 .pregunta-container-ornament {
     z-index: 4;
 }
-.pregunta-container-ornament {
-    background: red;
-}
+
 .cartel-line-top,
 .cartel-line-bottom {
     z-index: 3;
@@ -182,8 +180,9 @@ h1, h2, h3 {
         radial-gradient(ellipse at 20% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 40%),
         radial-gradient(ellipse at 80% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 40%);
     pointer-events: none;
-    z-index: 2;
+    z-index: 0; /* ← CAMBIAR A 0 */
 }
+
 
 /* Lazos decorativos laterales */
 .lazo-decorativo {
