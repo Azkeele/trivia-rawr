@@ -1,59 +1,54 @@
-/* Obtener categoría desde la URL */
 const params = new URLSearchParams(window.location.search);
 const categoria = params.get("cat");
 
-/* Mostrar título */
-document.getElementById("tituloCategoria").innerText =
-    categoria ? categoria.toUpperCase() : "TRIVIA";
+document.getElementById("tituloCategoria").innerText = categoria.toUpperCase();
 
-/* 🎨 Fondos por categoría */
-const fondosCategorias = {
-    fama: "url('img/fama.jpg')",
-    vinculos: "url('img/vinculos.jpg')",
-	@@ -16,7 +14,6 @@ const fondosCategorias = {
-    proyecto: "url('img/proyecto.jpg')"
+/* 🎨 Colores por categoría */
+const coloresCategorias = {
+    fama: "linear-gradient(135deg, #f7d046, #f4a261)",
+    vinculos: "linear-gradient(135deg, #ffafcc, #bde0fe)",
+    resignacion: "linear-gradient(135deg, #b8c0ff, #e0c3fc)",
+    felicidad: "linear-gradient(135deg, #caffbf, #9bf6ff)",
+    meteorito: "linear-gradient(135deg, #bdb2ff, #a0c4ff)",
+    proyecto: "linear-gradient(135deg, #ecb1fa, #fff6b6)"
 };
 
-/* Aplicar fondo correctamente SIN que se repita */
-if (categoria && fondosCategorias[categoria]) {
-    document.body.style.backgroundImage = fondosCategorias[categoria];
-    document.body.style.backgroundSize = "cover";
-	@@ -25,9 +22,7 @@ if (categoria && fondosCategorias[categoria]) {
-    document.body.style.backgroundAttachment = "fixed";
+if (coloresCategorias[categoria]) {
+    document.body.style.background = coloresCategorias[categoria];
 }
 
-/* ============================= */
-/*        LÓGICA DE JUEGO        */
-/* ============================= */
-
-let preguntasDisponibles = categoria && basePreguntas[categoria]
-    ? [...basePreguntas[categoria]]
-	@@ -36,12 +31,7 @@ let preguntasDisponibles = categoria && basePreguntas[categoria]
+let preguntasDisponibles = [...basePreguntas[categoria]];
 let preguntaActual = null;
-
 function obtenerPreguntaAleatoria() {
     if (preguntasDisponibles.length === 0) {
-        document.getElementById("pregunta").innerText =
-            "No hay más preguntas.";
+        document.getElementById("pregunta").innerText = "No hay más preguntas.";
         document.getElementById("opciones").innerHTML = "";
         return null;
     }
-
     const index = Math.floor(Math.random() * preguntasDisponibles.length);
     return preguntasDisponibles.splice(index, 1)[0];
-	@@ -63,15 +53,9 @@ function mostrarPregunta() {
+}
+function mostrarPregunta() {
+    preguntaActual = obtenerPreguntaAleatoria();
+    if (!preguntaActual) return;
+    document.getElementById("pregunta").innerText = preguntaActual.pregunta;
+    const opcionesDiv = document.getElementById("opciones");
+    opcionesDiv.innerHTML = "";
+    preguntaActual.opciones.forEach((opcion, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = opcion;
         btn.onclick = () => verificarRespuesta(index);
         opcionesDiv.appendChild(btn);
     });
-
     document.getElementById("resultado").innerText = "";
 }
-
 function verificarRespuesta(indice) {
     const botones = document.querySelectorAll("#opciones button");
-
     botones.forEach(btn => btn.disabled = true);
-
     if (indice === preguntaActual.correcta) {
         document.getElementById("resultado").innerText = "Correcto ✅";
     } else {
+        document.getElementById("resultado").innerText = "Incorrecto ❌";
+    }
+}
+mostrarPregunta();
