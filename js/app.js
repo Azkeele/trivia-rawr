@@ -15,11 +15,11 @@ if (!categoria || !basePreguntas[categoria]) {
 
 // Colores por categoria
 const coloresCategorias = {
-    fama: "linear-gradient(135deg, #f7d046, #f4a261)",
-    vinculos: "linear-gradient(135deg, #ffafcc, #bde0fe)",
-    resignacion: "linear-gradient(135deg, #b8c0ff, #e0c3fc)",
+    fama: "linear-gradient(135deg, #feedae, #ffa941c6)",
+    vinculos: "linear-gradient(135deg, #ffafcc, #ba4b4b)",
+    resignacion: "linear-gradient(135deg, #6b6e83, #766487)",
     felicidad: "linear-gradient(135deg, #caffbf, #9bf6ff)",
-    meteorito: "linear-gradient(135deg, #bdb2ff, #a0c4ff)",
+    meteorito: "linear-gradient(135deg, #af5b5b, #77787a)",
     proyecto: "linear-gradient(135deg, #ffd6a5, #fdffb6)"
 };
 

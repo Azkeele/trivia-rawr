@@ -263,10 +263,10 @@ h3 {
 /* Animación de balanceo suave */
 @keyframes balanceo-cartel {
     0%   { transform: rotate(-2deg); }
-    25%  { transform: rotate(1.5deg); }
-    50%  { transform: rotate(-1deg); }
-    75%  { transform: rotate(0.6deg); }
-    100% { transform: rotate(-2deg); }
+    15%  { transform: rotate(1.5deg); }
+    40%  { transform: rotate(-1deg); }
+    65%  { transform: rotate(0.6deg); }
+    75% { transform: rotate(-2deg); }
 }
 
 
