@@ -641,8 +641,10 @@ h2#tituloCategoria {
     right: -10px;
     bottom: 120px; /* lo sube bastante en pantalla */
 
-    font-size: 1.8rem; /* MUCHO más grande el texto */
+    font-size: 3rem; /* MUCHO más grande el texto */
     padding: 22px 34px;
+    min-width: 120px;   
+    min-height: 80px;
 
     transform: translateY(120px);
     animation: subirCartelCategoria 1.1s ease-out forwards;
