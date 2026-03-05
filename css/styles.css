@@ -633,30 +633,53 @@ h2#tituloCategoria {
         display: block;
     }
  
- /* CARTEL DE CATEGORIA - CELULAR */
+ /* ===== CARTEL DE CATEGORIA - CELULAR ===== */
 
 
- #cartelCategoria{
+ #cartel-categoria{
+    position: fixed;
+    right: -10px;
+    bottom: 120px; /* lo sube bastante en pantalla */
 
-     right:15px;
-     bottom:90px;
+    font-size: 1.8rem; /* MUCHO más grande el texto */
+    padding: 22px 34px;
 
-     padding:18px 30px;
+    transform: translateY(120px);
+    animation: subirCartelCategoria 1.1s ease-out forwards;
 
-     font-size:2rem;
- }
-
-
- /* PALO DEL CARTEL - CELULAR */
-
-
- #cartelCategoria::after{
-
-    width:7px;
-    height:50vh;
- } 
-
+    z-index: 20;
 }
 
+ /* PALO DEL CARTEL */
+ #cartel-categoria::after{
+    content: "";
+    position: absolute;
 
- 
+    width: 8px;
+    height: calc(100vh - 220px); /* mucho más corto proporcionalmente */
+
+    background: linear-gradient(
+        to bottom,
+        #5e4631,
+        #3a2a1d
+    );
+
+    bottom: -200px;
+    right: 22px;
+
+    border-radius: 4px;
+}
+
+/* ANIMACION */
+@keyframes subirCartelCategoria{
+    from{
+        transform: translateY(160px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+}
