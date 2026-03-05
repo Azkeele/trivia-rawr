@@ -328,8 +328,8 @@ h3 {
 #cartelCategoria{
     position:absolute;
 
-    right:-70px;
-    top:40px;
+    right:-60px;
+    bottom:-20px;
 
     background:#fff6e9;
     border:3px solid #c9a46a;
@@ -354,12 +354,12 @@ h3 {
     content:"";
     position:absolute;
 
-    bottom:-35px;
+    top:100%;
     left:50%;
     transform:translateX(-50%);
 
     width:4px;
-    height:35px;
+    height:100vh;
 
     background:#8a6b3f;
 }
