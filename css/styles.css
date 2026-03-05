@@ -324,59 +324,52 @@ h3 {
     text-align: center;
 }
 
-/* CARTEL */
+/* CARTEL DE CATEGORIA */
+
+
 #cartelCategoria{
     position:fixed;
 
-    right:10px;
-    bottom:20px;
+    right:40px;
+    bottom:120px;
 
     background:#fff6e9;
     border:3px solid #c9a46a;
-    border-radius:6px;
+    border-radius:8px;
 
-    padding:5px 10px;
+    padding:10px 18px;
 
     font-family:'Cormorant Garamond', serif;
-    font-size:1rem;
+    font-size:1.3rem;
 
     box-shadow:0 6px 12px rgba(0,0,0,0.25);
 
     animation:subirCartel 0.7s ease forwards;
 
-    z-index:6;
+    z-index:10;
 }
-/*Palito sosteniendo*/
+
+
+/* PALO DEL CARTEL */
+
+
 #cartelCategoria::after{
     content:"";
     position:absolute;
 
-    top:100%;
     left:50%;
     transform:translateX(-50%);
 
-    width:4px;
-    height:100vh;
+    top:100%;
+
+    width:5px;
+    height:65vh;
 
     background:#8a6b3f;
 }
-/*animacion*/
-@keyframes subirCartel{
-
-0%{
-    transform:translateY(60px);
-    opacity:0;
-}
-
-100%{
-    transform:translateY(0);
-    opacity:1;
-}
-
-}
 
 #resultado {
-        position: absolute;           /* sobre el contenedor */
+        position: absolute;           
             top: 50%;
                 left: 50%;
                     transform: translate(-50%, -50%);
@@ -386,9 +379,9 @@ h3 {
                                     padding: 20px 35px;
                                         border-radius: 12px;
                                             color: #FFF;
-                                                pointer-events: none;         /* no interfiere con botones */
-                                                    z-index: 10;                  /* encima de todo dentro del contenedor */
-                                                        opacity: 0;                   /* empieza invisible */
+                                                pointer-events: none;         
+                                                    z-index: 10;                  
+                                                        opacity: 0;                   
                                                             transition: all 0.4s ease;
                                                             }
 
@@ -626,42 +619,26 @@ h2#tituloCategoria {
         margin: 0 auto;         
         display: block;
     }
-   /* CARTEL DE CATEGORIA - RESPONSIVO CELULAR */
+  
+ /* CARTEL DE CATEGORIA - CELULAR */
 
-  #cartelCategoria{
-     position:fixed;
 
-     right:12px;
-     bottom:35px;
+ #cartelCategoria{
+     right:15px;
+     bottom:80px;
 
-     background:#fff6e9;
-     border:3px solid #c9a46a;
-     border-radius:8px;
- 
-     padding:12px 20px;
+     padding:12px 22px;
+     font-size:1.6rem;
+     }
 
-     font-family:'Cormorant Garamond', serif;
-     font-size:1.5rem;
 
-     box-shadow:0 6px 12px rgba(0,0,0,0.25);
+ /* PALO DEL CARTEL - CELULAR */
 
-     animation:subirCartel 0.7s ease forwards;
-
-     z-index:6;
- }
 
  #cartelCategoria::after{
-     content:"";
-     position:absolute;
-
-     left:50%;
-     transform:translateX(-50%);
-
-     top:100%;
-
-     width:5px;
-     height:70vh;
-
-     background:#8a6b3f;
+      height:55vh;
+      width:6px;
      }
- }
+
+
+}
