@@ -319,6 +319,57 @@ h3 {
     transform: translateY(-50%);
 }
 
+#headerCategoria{
+    position: relative;
+    text-align: center;
+}
+
+/* CARTEL */
+#cartelCategoria{
+    position: absolute;
+    top: -60px;
+    right: -10px;
+
+    background: #fff6e9;
+    border: 3px solid #c9a46a;
+    border-radius: 8px;
+
+    padding: 8px 14px;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+
+    transform: translateY(-120px);
+    animation: caerCartel 0.9s ease forwards;
+}
+
+/* cuerdita del cartel */
+#cartelCategoria::before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:50%;
+    width:2px;
+    height:20px;
+    background:#c9a46a;
+}
+
+/* animación */
+@keyframes caerCartel{
+    0%{
+        transform: translateY(-120px);
+        opacity:0;
+    }
+    70%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
 #resultado {
         position: absolute;           /* sobre el contenedor */
             top: 50%;
@@ -570,6 +621,16 @@ h2#tituloCategoria {
         margin: 0 auto;         
         display: block;
     }
+    
+   #cartelCategoria {
+    font-size:1.1rem;
+    padding:6px 10px;
+    top:-50px;
+    right:-5px;
+ }
+
 }
+
+
 
 

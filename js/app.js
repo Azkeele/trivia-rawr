@@ -13,6 +13,21 @@ if (!categoria || !basePreguntas[categoria]) {
     titulo.innerText = categoria.toUpperCase();
 }
 
+// Cartel por categoria
+const cartel = document.getElementById("cartelCategoria");
+
+const simbolosCategoria = {
+    vinculos: "♥",
+    resignacion: "⛈",
+    fama: "✦",
+    meteorito: "°⁀",
+    proyecto: "💡",
+    felicidad: "𖤓 ",
+};
+
+if(simbolosCategoria[categoria]){
+    cartel.textContent = simbolosCategoria[categoria];
+}
 // Colores por categoria
 const coloresCategorias = {
     fama: "linear-gradient(135deg, #feedae, #ffa941c6)",
