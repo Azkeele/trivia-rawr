@@ -450,7 +450,7 @@ h2#tituloCategoria {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
 
-    background: rgba(139, 105, 20, 0.45); /* dorado suave translúcido */
+    background: rgba(139, 105, 20, 0.5); /* dorado suave translúcido */
     color: #FFF8E7;
 
     border: 2px solid #8B6914;
