@@ -629,19 +629,41 @@ h2#tituloCategoria {
         margin: 0 auto;         
         display: block;
     }
-    @media (max-width:600px){
+   /* CARTEL DE CATEGORIA - RESPONSIVO CELULAR */
 
-   #cartelCategoria{
-     right:-25px;
-     top:30px;
-     font-size:1rem;
+ #cartelCategoria{
+    position:fixed;
+
+    right:10px;
+    bottom:20px;
+
+    background:#fff6e9;
+    border:3px solid #c9a46a;
+    border-radius:6px;
+
+    padding:5px 10px;
+
+    font-family:'Cormorant Garamond', serif;
+    font-size:1rem;
+
+    box-shadow:0 6px 12px rgba(0,0,0,0.25);
+
+    z-index:6;
 }
 
+#cartelCategoria::after{
+    content:"";
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    top:100%;
+
+    width:4px;
+    height:100vh;
+
+    background:#8a6b3f;
 }
-   
-
-
-
-
 
 }
