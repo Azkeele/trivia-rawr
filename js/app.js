@@ -85,5 +85,5 @@ resultadoElemento.classList.remove("correcto", "incorrecto");
  }, 1500);
 
 }
-                                                                                    
+mostrarPregunta();                                                                                    
                                                                                         
