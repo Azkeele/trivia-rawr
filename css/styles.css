@@ -291,35 +291,32 @@ h3 {
 }
 
 
-/* Lazos decorativos laterales */
+/* Lazos / ornamentos decorativos laterales */
 .lazo-decorativo {
     position: absolute;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgb(255, 223, 223);
-    animation: oscilacion 3s ease-in-out infinite;
+    font-size: 2.2rem;
+    color: #d4af37;
+    text-shadow: 0 0 6px rgba(212,175,55,0.6);
+    z-index: 5;
 }
 
+/* símbolo decorativo */
+.lazo-decorativo::before {
+    content: "⋆ 𐙚 ̊.";
+}
+
+/* posición izquierda */
 .lazo-izquierda {
-    left: -50px;
+    left: -30px;
     top: 50%;
     transform: translateY(-50%);
-    animation-delay: 0s;
 }
 
+/* posición derecha */
 .lazo-derecha {
-    right: -50px;
+    right: -30px;
     top: 50%;
     transform: translateY(-50%);
-    animation-delay: 1.5s;
-}
-
-@keyframes oscilacion {
-    0%, 100% {
-        transform: translateY(-50%) rotateZ(-8deg);
-    }
-    50% {
-        transform: translateY(-50%) rotateZ(8deg);
-    }
 }
 
 #resultado {
