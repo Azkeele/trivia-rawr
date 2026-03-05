@@ -326,24 +326,21 @@ h3 {
 
 /* CARTEL */
 #cartelCategoria{
-    position:absolute;
+    position:fixed;
 
-    right:-60px;
-    bottom:-20px;
+    right:10px;
+    bottom:20px;
 
     background:#fff6e9;
     border:3px solid #c9a46a;
     border-radius:6px;
 
-    padding:6px 14px;
+    padding:5px 10px;
 
     font-family:'Cormorant Garamond', serif;
-    font-size:1.3rem;
+    font-size:1rem;
 
     box-shadow:0 6px 12px rgba(0,0,0,0.25);
-
-    transform:translateY(60px);
-    opacity:0;
 
     animation:subirCartel 0.7s ease forwards;
 
