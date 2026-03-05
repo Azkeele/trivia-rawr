@@ -66,25 +66,24 @@ function mostrarPregunta() {
 
 }
 function verificarRespuesta(indice) {
-        const botones = document.querySelectorAll("#opciones button");
-            botones.forEach(btn => btn.disabled = true);
+  const botones = document.querySelectorAll("#opciones button");
+  botones.forEach(btn => btn.disabled = true);
+ resultadoElemento.classList.remove("correcto", "incorrecto");
+   if (indice === preguntaActual.correcta) {
 
-                // Limpiar clases previas del resultado
-                    resultadoElemento.classList.remove("correcto", "incorrecto");
+    resultadoElemento.innerText = "¡Correcto!";
+    resultadoElemento.classList.add("correcto");
 
-                        if (indice === preguntaActual.correcta) {
-                                resultadoElemento.innerText = "¡Correcto!";
-                                        resultadoElemento.classList.add("correcto");
-                                            } else { 
-                                                    resultadoElemento.innerText = "Incorrecto";
-                                                            resultadoElemento.classList.add("incorrecto");
-                                                                }
+} else { 
 
-                                                                    // Opcional: quitar color después de 1.5s pero mantener el texto
-                                                                        setTimeout(() => {
-                                                                                resultadoElemento.classList.remove("correcto", "incorrecto");
-                                                                                        // NO hacemos resultadoElemento.innerText = "" para que no desaparezca
-                                                                                            }, 1500);
-                                                                                            }
-                                                                                    }
+    resultadoElemento.innerText = "Incorrecto";
+    resultadoElemento.classList.add("incorrecto");
+
+}
+setTimeout(() => {
+resultadoElemento.classList.remove("correcto", "incorrecto");
+ }, 1500);
+
+}
+                                                                                    
                                                                                         
