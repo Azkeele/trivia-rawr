@@ -69,7 +69,7 @@ function verificarRespuesta(indice) {
         const botones = document.querySelectorAll("#opciones button");
             botones.forEach(btn => btn.disabled = true);
 
-                // Limpiar clases previas
+                // Limpiar clases previas del resultado
                     resultadoElemento.classList.remove("correcto", "incorrecto");
 
                         if (indice === preguntaActual.correcta) {
@@ -80,10 +80,11 @@ function verificarRespuesta(indice) {
                                                             resultadoElemento.classList.add("incorrecto");
                                                                 }
 
-                                                                    // Desaparecer después de 1.5s
+                                                                    // Opcional: quitar color después de 1.5s pero mantener el texto
                                                                         setTimeout(() => {
                                                                                 resultadoElemento.classList.remove("correcto", "incorrecto");
-                                                                                        resultadoElemento.innerText = "";
+                                                                                        // NO hacemos resultadoElemento.innerText = "" para que no desaparezca
                                                                                             }, 1500);
                                                                                             }
+                                                                                    }
                                                                                         
