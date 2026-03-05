@@ -295,7 +295,7 @@ h3 {
 .lazo-decorativo {
     position: absolute;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0,1);
+    text-shadow: 2px 2px 4px rgb(255, 223, 223);
     animation: oscilacion 3s ease-in-out infinite;
 }
 
