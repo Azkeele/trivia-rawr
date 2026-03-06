@@ -206,10 +206,8 @@ proyecto: [
 
 meteorito: [
 {pregunta:"Vuelo sin alas, lloro sin ojos. ¿Qué soy?", opciones:["Nube","Viento","Lluvia","Tiempo"], correcta:2},
-{pregunta:"Tengo agujas pero no coso. ¿Qué soy?", opciones:["Reloj","Pino","Erizo","Brújula"], correcta:0},
 {pregunta:"Blanca por dentro, verde por fuera. ¿Qué es?", opciones:["Sandía","Pera","Manzana","Melón"], correcta:3},
 {pregunta:"Oro parece, plata no es.", opciones:["Plátano","Manzana","Piña","Limón"], correcta:0},
-{pregunta:"Cuanto más quitas más grande es.", opciones:["Agujero","Montaña","Río","Sombra"], correcta:0},
 {pregunta:"Tiene llaves pero no puertas.", opciones:["Piano","Mapa","Libro","Coche"], correcta:0},
 {pregunta:"Corre sin piernas.", opciones:["Río","Perro","Auto","Viento"], correcta:0},
 {pregunta:"Sube y baja pero no se mueve.", opciones:["Escalera","Temperatura","Sol","Edad"], correcta:1},
