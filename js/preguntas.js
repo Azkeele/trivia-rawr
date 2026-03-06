@@ -245,7 +245,17 @@ meteorito: [
 {pregunta:"Cuanto más seco, más húmedo. ¿Qué es?", opciones:["Toalla","Arena","Trapo","Esponja"], correcta:0},
 {pregunta:"Tiene dientes pero no come. ¿Qué es?", opciones:["Peine","Sierra","Tenedor","Cuchillo"], correcta:0},
 {pregunta:"No tiene alas pero puede volar. ¿Qué es?", opciones:["Tiempo","Viento","Sombras","Papel"], correcta:1},
-{pregunta:"Vuela sin alas, llora sin ojos. ¿Qué es?", opciones:["Nube","Viento","Lluvia","Río"], correcta:2}
+{pregunta:"Vuela sin alas, llora sin ojos. ¿Qué es?", opciones:["Nube","Viento","Lluvia","Río"], correcta:2},
+{pregunta:"Cuanto más avanzas hacia mí, más me dejo atrás. ¿Qué soy?", opciones:["El horizonte","El futuro","La distancia","El camino"], correcta:0},
+{pregunta:"No tengo principio ni fin, pero ocupo un lugar entre ambos. ¿Qué soy?", opciones:["El tiempo","El círculo","El infinito","El presente"], correcta:3},
+{pregunta:"Estoy en todo lo que ves, pero nunca puedes verme directamente. ¿Qué soy?", opciones:["La luz","El aire","El tiempo","La gravedad"], correcta:0},
+{pregunta:"Existe solo cuando lo nombras, pero si hablas demasiado de ello desaparece. ¿Qué es?", opciones:["El misterio","El silencio","La magia","El secreto"], correcta:1},
+{pregunta:"Siempre respondo, pero nunca hablo primero. ¿Qué soy?", opciones:["Un eco","Un espejo","Una sombra","Un reflejo"], correcta:0},
+{pregunta:"Nace cuando dos se encuentran, vive mientras los separa algo, y muere cuando se tocan. ¿Qué es?", opciones:["La sombra","La distancia","La línea","El camino"], correcta:0},
+{pregunta:"Si me rompes no hago ruido, pero todo el mundo lo nota. ¿Qué soy?", opciones:["Una promesa","La confianza","El silencio","Un secreto"], correcta:1},
+{pregunta:"Puedo llenar una habitación pero no ocupo espacio. ¿Qué soy?", opciones:["La oscuridad","La luz","El aire","El sonido"], correcta:1},
+{pregunta:"Cuanto más compartes de mí, más crezco. ¿Qué soy?", opciones:["El conocimiento","El rumor","La amistad","El amor"], correcta:0},
+{pregunta:"Soy más ligero que una pluma, pero nadie puede sostenerme mucho tiempo. ¿Qué soy?", opciones:["La respiración","El aire","El pensamiento","El suspiro"], correcta:0}
 ]
 
 };
