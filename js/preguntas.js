@@ -1,16 +1,13 @@
 const basePreguntas = {
 
 fama: [
-{pregunta:"¿Quién protagonizó Titanic?", opciones:["Brad Pitt","Leonardo DiCaprio","Tom Cruise","Johnny Depp"], correcta:1},
 {pregunta:"¿Qué cantante es conocida como la Reina del Pop?", opciones:["Madonna","Shakira","Adele","Rihanna"], correcta:0},
 {pregunta:"¿Quién creó Marvel Comics?", opciones:["Stan Lee","Walt Disney","Spielberg","Tarantino"], correcta:0},
 {pregunta:"¿Qué banda cantó 'Bohemian Rhapsody'?", opciones:["Queen","Beatles","Coldplay","Nirvana"], correcta:0},
 {pregunta:"¿Qué actor interpreta a Iron Man?", opciones:["Chris Evans","Robert Downey Jr.","Mark Ruffalo","Chris Hemsworth"], correcta:1},
 {pregunta:"¿Qué serie tiene dragones y tronos?", opciones:["Vikings","Game of Thrones","Breaking Bad","Lost"], correcta:1},
-{pregunta:"¿Qué película tiene el personaje Jack Sparrow?", opciones:["Piratas del Caribe","Avatar","Gladiador","Interestelar"], correcta:0},
 {pregunta:"¿Quién es conocido como el Rey del Pop?", opciones:["Elvis","Michael Jackson","Prince","Drake"], correcta:1},
 {pregunta:"¿Qué red social es famosa por videos cortos?", opciones:["Facebook","TikTok","LinkedIn","Pinterest"], correcta:1},
-{pregunta:"¿Qué actor es famoso por interpretar a Jack Nicholson en 'El Resplandor'?", opciones:["Jack Nicholson","Robert De Niro","Al Pacino","Dustin Hoffman"], correcta:0},
 {pregunta:"¿Qué banda lanzó el álbum 'Abbey Road'?", opciones:["The Beatles","The Rolling Stones","Pink Floyd","Led Zeppelin"], correcta:0},
 {pregunta:"¿Quién dirige las películas de 'Jurassic Park'?", opciones:["Steven Spielberg","James Cameron","Tim Burton","Christopher Nolan"], correcta:0},
 {pregunta:"¿Qué cantante lanzó la canción 'Rolling in the Deep'?", opciones:["Adele","Beyoncé","Lady Gaga","Katy Perry"], correcta:0},
